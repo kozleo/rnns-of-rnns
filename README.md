@@ -1,3 +1,4 @@
-# rnns-of-rnns
+# RNNs of RNNs
 
-A truly neutral research cookie cutter
+Code to train and analyze models from the "RNNs of RNNs" arhiecture class introduced in our NeurIPS paper: https://arxiv.org/abs/2106.08928.
+
