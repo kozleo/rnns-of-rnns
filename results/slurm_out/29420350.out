@@ -1,0 +1,123 @@
+[I 18:58:32.189 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 18:58:32.454 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 18:58:35.598 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-02-15 18:58:40.090 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-02-15 18:58:40.096 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-15 18:58:40.096 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-15 18:58:40.096 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-15 18:58:40.096 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-15 18:58:40.096 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-15 18:58:40.096 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-15 18:58:40.098 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-02-15 18:58:40.109 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-02-15 18:58:40.111 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-02-15 18:58:40.111 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 18:58:40.119 NotebookApp] Serving notebooks from local directory: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 18:58:40.119 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 18:58:40.119 NotebookApp] http://node031:9000/
+[I 18:58:40.119 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 19:00:29.241 NotebookApp] 302 GET / (172.16.24.254) 0.980000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 19:00:51.331 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2b0fbf7ee9d0>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b0fbf7ee9d0>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-4' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-59' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b0fbf7eecd0>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b0fbf7eecd0>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-8' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-59' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+[I 19:00:51.713 NotebookApp] Kernel started: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 19:10:51.572 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:12:51.560 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:14:51.555 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:16:52.452 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:18:51.573 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:20:51.574 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:22:51.556 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:24:51.581 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:26:52.490 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:27:33.060 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:27:37.334 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:32:52.490 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:34:51.696 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:36:51.594 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:38:51.602 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:40:51.609 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:42:52.504 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:46:52.504 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:48:52.502 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:50:52.518 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:52:51.618 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:54:22.016 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:56:52.502 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:58:51.622 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:00:51.606 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:02:52.492 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:04:52.500 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:16:52.515 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:18:52.532 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:20:52.526 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:22:51.633 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:24:52.518 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:26:34.010 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 20:26:52.515 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:27:13.932 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 20:28:51.623 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:30:51.646 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:31:26.478 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 20:32:51.638 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:34:51.619 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:36:52.074 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:38:51.635 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:40:52.521 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:42:52.529 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 20:46:51.639 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:24:51.955 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:26:52.404 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:28:52.541 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:34:52.538 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:36:31.523 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 21:36:51.645 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:38:52.538 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:39:47.677 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:44:52.551 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:46:51.645 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:48:52.542 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:50:52.561 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 21:56:52.597 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:04:52.601 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:08:51.657 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:10:51.667 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:12:52.554 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:14:52.562 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:15:39.392 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 22:16:51.682 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:17:40.086 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 22:18:34.243 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 22:18:51.664 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:19:00.240 NotebookApp] Kernel interrupted: 5f938a02-8c72-4a9a-b6cb-4f6a74090d3c
+[I 22:20:51.665 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:22:51.666 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:24:51.687 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:26:52.571 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:30:52.619 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:32:52.559 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:34:51.677 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:38:52.561 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:40:51.690 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:42:52.581 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:44:52.589 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:46:51.685 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:48:51.684 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:50:51.686 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:52:51.687 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:54:52.576 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 22:58:51.696 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
