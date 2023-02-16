@@ -1,0 +1,51 @@
+[I 14:15:22.974 NotebookApp] [nb_conda_kernels] enabled, 11 kernels found
+[I 14:15:23.367 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 14:15:26.739 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-02-09 14:15:31.583 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-02-09 14:15:31.595 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-09 14:15:31.595 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-09 14:15:31.595 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-09 14:15:31.595 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-09 14:15:31.595 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-09 14:15:31.595 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-02-09 14:15:31.597 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-02-09 14:15:31.608 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-02-09 14:15:31.610 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-02-09 14:15:31.610 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 14:15:31.618 NotebookApp] Serving notebooks from local directory: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 14:15:31.618 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 14:15:31.618 NotebookApp] http://node031:9000/
+[I 14:15:31.619 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 14:18:14.216 NotebookApp] 302 GET / (172.16.24.254) 1.030000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 14:18:49.081 NotebookApp] Creating new directory in 
+[I 14:19:09.450 NotebookApp] Creating new file in /notebooks
+[W 14:19:33.530 NotebookApp] 400 GET /api/contents/notebooks/testing_notebook.ipynb?type=notebook&_=1675970369888 (172.16.24.254): Unreadable Notebook: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns/notebooks/testing_notebook.ipynb NotJSONError("Notebook does not appear to be JSON: ''...")
+[W 14:19:33.531 NotebookApp] Unreadable Notebook: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns/notebooks/testing_notebook.ipynb NotJSONError("Notebook does not appear to be JSON: ''...")
+[W 14:19:33.531 NotebookApp] 400 GET /api/contents/notebooks/testing_notebook.ipynb?type=notebook&_=1675970369888 (172.16.24.254) 3.090000ms referer=http://localhost:9000/notebooks/notebooks/testing_notebook.ipynb
+[W 14:19:40.839 NotebookApp] delete /notebooks/testing_notebook.ipynb
+[W 14:19:40.854 NotebookApp] Skipping trash for /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns/notebooks/testing_notebook.ipynb, [Errno 13] Permission denied: b'/rdma/vast-rdma/.Trash-154864'
+[I 14:21:21.641 NotebookApp] Creating new notebook in /notebooks
+Exception in callback <TaskStepMethWrapper object at 0x2b1c7dd132b0>()
+handle: <Handle <TaskStepMethWrapper object at 0x2b1c7dd132b0>()>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:842> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-181' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x2b1c7da86b50>()
+handle: <Handle <TaskStepMethWrapper object at 0x2b1c7da86b50>()>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-2' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:842> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-181' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+[I 14:21:23.535 NotebookApp] Kernel started: 183e67dd-f822-436e-ad46-3def5e1a499b, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 14:23:23.497 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 14:25:23.444 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 14:27:23.478 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 14:27:50.412 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 14:51:23.689 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[I 19:16:19.417 NotebookApp] Starting buffering for 183e67dd-f822-436e-ad46-3def5e1a499b:49b3785c3d994155833202d1bbf02908
+slurmstepd: error: *** JOB 29361380 ON node031 CANCELLED AT 2023-02-09T23:11:04 ***
