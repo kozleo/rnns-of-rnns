@@ -110,9 +110,9 @@ class SymmetricStable(nn.Module):
 
         self.register_buffer("Id", torch.eye(n))
 
-    def forward(self, X: torch.Tensor) -> torch.Tensor:
-        # I - X.T @ X
-        return self.Id - X.T @ X - 1e-5 * self.Id
+    def forward(self, W: torch.Tensor) -> torch.Tensor:
+        # I - W.T @ W
+        return self.Id - W.T @ W - 1e-5 * self.Id
 
 
 class VanillaRNNDiagonalMetricTorchCell(nn.Module):
@@ -188,3 +188,76 @@ class VanillaRNNDiagonalMetricTorchCell(nn.Module):
                 else:
                     print("RNN is provably stable with symmetric condition.")
                 return e
+
+
+class InterarealMaskedAndStable(nn.Module):
+    def __init__(self, n: int, M_hat: torch.Tensor, B_mask: torch.Tensor):
+        super().__init__()
+
+        self.register_buffer("Id", torch.eye(n))
+        self.register_buffer("B_mask", B_mask)
+        self.register_buffer("M_hat", M_hat)
+        self.register_buffer("M_hat_inv", torch.linalg.inv(M_hat))
+
+    def forward(self, B: torch.Tensor) -> torch.Tensor:
+        # L = B - M @ B @ M^-1
+        return (B * self.B_mask) - self.M_hat @ (B * self.B_mask).T @ self.M_hat_inv
+
+
+# TODO: Write method to splice weights from pretrained RNNs into this RNN of RNNs. For the RNN of RNNs we only train the interareal conenctions so remember to turn off gradients.
+class GlobalWorkSpaceRNNofRNNs(nn.Module):
+    def __init__(self, param_dict: dict):
+        super().__init__()
+
+        # timestep for Euler integration
+        self.alpha = param_dict["alpha"]
+
+        # number of input, hidden, and output
+        self.input_size = param_dict["input_size"]
+        self.hidden_size = param_dict["hidden_size"]
+        self.output_size = param_dict["output_size"]
+
+        # leak rate of neurons
+        self.gamma = param_dict["gamma"]
+
+        # set nonlinearity of the vanilla RNN
+        self.nonlinearity = param_dict["nonlinearity"]
+
+        self.M_hat = None
+        self.B_mask = None
+
+        self.L_hat = nn.Linear(in_features=100, out_features=100, bias=False)
+
+        # list of rnns
+        # self.rnn
+
+        # parameterize L_hat
+        parametrize.register_parametrization(
+            self.L_hat,
+            "weight",
+            InterarealMaskedAndStable(
+                n=self.hidden_size, M_hat=self.M_hat, B_mask=self.B_mask
+            ),
+        )
+
+        # output weights
+        self.W_hidden_to_out = nn.Linear(
+            in_features=self.hidden_size, out_features=self.output_size
+        )
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        outputs = []
+
+        # Initialize hidden state
+        hx = torch.zeros(input.shape[0], self.hidden_size)
+
+        # loop over input
+        for i in range(input.shape[1]):
+            fx = -hx + self.rnn(input[:, i, :], hx)
+            hx = hx + self.alpha * (fx)
+            y = self.W_hidden_to_out(hx)
+
+            outputs += [y]
+
+        # organize outputs and return
+        return torch.stack(outputs).permute(1, 0, 2)
