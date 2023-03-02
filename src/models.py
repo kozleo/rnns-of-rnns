@@ -3,109 +3,20 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 from typing import List, Tuple, Optional, overload
-
-
-class VanillaRNNDiagonalMetric(nn.Module):
-    def __init__(self, param_dict: dict):
-        super().__init__()
-
-        # timestep for Euler integration
-        self.alpha = param_dict["alpha"]
-
-        # number of input, hidden, and output
-        self.input_size = param_dict["input_size"]
-        self.hidden_size = param_dict["hidden_size"]
-        self.output_size = param_dict["output_size"]
-
-        # leak rate of neurons
-        self.gamma = param_dict["gamma"]
-
-        # set nonlinearity of the vanilla RNN
-        self.nonlinearity = param_dict["nonlinearity"]
-        if self.nonlinearity == "tanh":
-            self.phi = torch.tanh
-
-        if self.nonlinearity == "relu":
-            self.phi = F.relu
-
-        if self.nonlinearity == "none":
-            print("Nl = none")
-            self.phi = torch.nn.Identity()
-
-        # diagonal metric to be learned
-        self.Phi = nn.Parameter(
-            torch.normal(1, 1 / np.sqrt(self.hidden_size), (self.hidden_size,))
-        )
-
-        # to parameterize weight matrix
-        self.B = nn.Parameter(
-            torch.normal(
-                1, 1 / np.sqrt(self.hidden_size), (self.hidden_size, self.hidden_size)
-            )
-        )
-
-        # initialize the input-to-hidden weights
-        self.weight_ih = nn.Parameter(
-            torch.normal(
-                0, 1 / np.sqrt(self.hidden_size), (self.hidden_size, self.input_size)
-            )
-        )
-
-        # initialize the hidden-to-output weights
-        self.weight_ho = nn.Parameter(
-            torch.normal(
-                0, 1 / np.sqrt(self.hidden_size), (self.output_size, self.hidden_size)
-            )
-        )
-
-        # initialize the output bias weights
-        self.bias_oh = nn.Parameter(
-            torch.normal(0, 1 / np.sqrt(self.hidden_size), (1, self.output_size))
-        )
-
-        # initialize the hidden bias weights
-        self.bias_hh = nn.Parameter(
-            torch.normal(0, 1 / np.sqrt(self.hidden_size), (1, self.hidden_size))
-        )
-
-        # output weights
-        self.W_hidden_to_out = nn.Linear(
-            in_features=self.hidden_size, out_features=self.output_size
-        )
-
-    def forward(self, input: torch.Tensor) -> torch.Tensor:
-        state = torch.zeros(input.shape[0], self.hidden_size)
-
-        # for storing RNN outputs and hidden states
-        outputs = []
-
-        # loop over input
-        for i in range(input.shape[1]):
-            # compute output
-            hy = state @ self.weight_ho.T + self.bias_oh
-
-            # save output and hidden states
-            outputs += [hy]
-
-            # compute the RNN update
-            fx = -state + self.phi(
-                state @ (torch.diag(self.Phi**-1) @ self.B @ torch.diag(self.Phi)).T
-                + input[:, i, :] @ self.weight_ih.T
-                + self.bias_hh
-            )
-
-            # step hidden state foward using Euler discretization
-            state = state + self.alpha * (fx)
-
-        # organize states and outputs and return
-        return torch.stack(outputs).permute(1, 0, 2)
-
-
+from src import utils
 import torch.nn.utils.parametrize as parametrize
 
 
 class SymmetricStable(nn.Module):
     def __init__(self, n: int, epsilon: float):
+        """Parameterization for symmetric matrix
+
+        with eigenvalues strictly less than unity.
+
+        Args:
+            n (int): Dimension of matrix.
+            epsilon (float): Enforces strict inequality.
+        """
         super().__init__()
 
         self.register_buffer("Id", torch.eye(n))
@@ -115,7 +26,8 @@ class SymmetricStable(nn.Module):
         return self.Id - W.T @ W - 1e-5 * self.Id
 
 
-class VanillaRNNDiagonalMetricTorchCell(nn.Module):
+class VSRNN(nn.Module):
+    # Vanilla Symmetric RNN (VSRNN)
     def __init__(self, param_dict: dict):
         super().__init__()
 
@@ -204,8 +116,7 @@ class InterarealMaskedAndStable(nn.Module):
         return (B * self.B_mask) - self.M_hat @ (B * self.B_mask).T @ self.M_hat_inv
 
 
-# TODO: Write method to splice weights from pretrained RNNs into this RNN of RNNs. For the RNN of RNNs we only train the interareal conenctions so remember to turn off gradients.
-class GlobalWorkSpaceRNNofRNNs(nn.Module):
+class GWRNN(nn.Module):
     def __init__(self, param_dict: dict):
         super().__init__()
 
@@ -213,8 +124,10 @@ class GlobalWorkSpaceRNNofRNNs(nn.Module):
         self.alpha = param_dict["alpha"]
 
         # number of input, hidden, and output
+        self.ns = param_dict["ns"]
+
         self.input_size = param_dict["input_size"]
-        self.hidden_size = param_dict["hidden_size"]
+        self.hidden_size = sum(self.ns)
         self.output_size = param_dict["output_size"]
 
         # leak rate of neurons
@@ -223,26 +136,44 @@ class GlobalWorkSpaceRNNofRNNs(nn.Module):
         # set nonlinearity of the vanilla RNN
         self.nonlinearity = param_dict["nonlinearity"]
 
-        self.M_hat = None
-        self.B_mask = None
+        # pretrained hidden-to-hidden, input-to-hidden, and hidden-to-output weights
+        self.W_hh = param_dict["W_hh"]
+        self.W_ih = param_dict["W_ih"]
+        self.W_ho = param_dict["W_ho"]
 
-        self.L_hat = nn.Linear(in_features=100, out_features=100, bias=False)
+        self.rnn = nn.RNNCell(
+            self.input_size, self.hidden_size, nonlinearity=self.nonlinearity
+        )
 
-        # list of rnns
-        # self.rnn
+        self.readout = nn.Linear(
+            in_features=self.hidden_size, out_features=self.output_size
+        )
 
-        # parameterize L_hat
+        # use pretrained subnetwork weights
+        if self.W_hh is not None:
+            self.rnn.weight_hh = nn.Parameter(self.W_hh)
+        if self.W_ih is not None:
+            self.rnn.weight_ih = nn.Parameter(self.W_ih)
+        if self.W_ho is not None:
+            self.readout.weight = nn.Parameter(self.W_ho)
+
+        # Do not train hidden to hidden weights. Input weights and biases can be trained.
+        self.rnn.weight_hh.requires_grad = False
+
+        # parameterize interareal connectivity matrix
+        self.L_hat = nn.Linear(
+            in_features=self.hidden_size, out_features=self.hidden_size, bias=False
+        )
+
+        self.M_hat = param_dict["M_hat"]
+        self.B_mask = param_dict["B_mask"]
+
         parametrize.register_parametrization(
             self.L_hat,
             "weight",
             InterarealMaskedAndStable(
                 n=self.hidden_size, M_hat=self.M_hat, B_mask=self.B_mask
             ),
-        )
-
-        # output weights
-        self.W_hidden_to_out = nn.Linear(
-            in_features=self.hidden_size, out_features=self.output_size
         )
 
     def forward(self, input: torch.Tensor) -> torch.Tensor:
@@ -253,10 +184,9 @@ class GlobalWorkSpaceRNNofRNNs(nn.Module):
 
         # loop over input
         for i in range(input.shape[1]):
-            fx = -hx + self.rnn(input[:, i, :], hx)
+            fx = -hx + self.rnn(input[:, i, :], hx) + self.L_hat(hx)
             hx = hx + self.alpha * (fx)
-            y = self.W_hidden_to_out(hx)
-
+            y = self.readout(hx)
             outputs += [y]
 
         # organize outputs and return
