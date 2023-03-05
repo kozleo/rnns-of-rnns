@@ -179,3 +179,4 @@ RuntimeError: Cannot enter into task <Task pending name='Task-36' coro=<HTTP1Ser
 [I 23:13:51.038 NotebookApp] Starting buffering for 5ca54477-f3f7-4e78-aeae-d6be11fbf3ed:319c1ea05f2746e49a847876797f976c
 [I 23:13:51.352 NotebookApp] Kernel shutdown: 5ca54477-f3f7-4e78-aeae-d6be11fbf3ed
 [I 23:13:53.742 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+slurmstepd: error: *** JOB 29592136 ON node082 CANCELLED AT 2023-03-02T01:17:29 DUE TO TIME LIMIT ***

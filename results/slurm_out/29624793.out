@@ -1,0 +1,188 @@
+[I 14:09:29.033 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 14:09:29.306 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 14:09:31.801 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-03-04 14:09:35.359 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-04 14:09:35.366 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-04 14:09:35.366 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-04 14:09:35.366 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-04 14:09:35.366 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-04 14:09:35.366 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-04 14:09:35.366 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-04 14:09:35.367 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-04 14:09:35.374 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-03-04 14:09:35.376 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-03-04 14:09:35.376 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 14:09:35.382 NotebookApp] Serving notebooks from local directory: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 14:09:35.382 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 14:09:35.382 NotebookApp] http://node035:9000/
+[I 14:09:35.382 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 14:14:09.522 NotebookApp] 302 GET / (172.16.24.254) 0.530000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 14:14:18.129 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2b622f4bfe80>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b622f4bfe80>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-9' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-56' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x2b622f966fd0>()
+handle: <Handle <TaskStepMethWrapper object at 0x2b622f966fd0>()>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-4' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:842> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-56' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+[I 14:14:18.536 NotebookApp] Kernel started: cc1ea857-cfd0-4e5e-b47a-aaade2f22533, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 14:16:18.493 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:16:18.494 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:18:18.493 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:18:18.497 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:20:18.492 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:20:18.492 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:22:18.479 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:22:18.479 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:24:18.490 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:24:18.491 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:36:18.541 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:36:18.542 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:48:18.521 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:48:18.522 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:50:18.496 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:50:18.496 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:52:18.481 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:52:18.482 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:54:18.848 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:54:18.849 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:56:18.580 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:56:18.580 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 14:57:01.411 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 14:58:18.475 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 14:58:18.475 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:00:18.485 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:00:18.486 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:02:18.505 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:02:18.506 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:04:18.496 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:04:18.497 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:40:18.551 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:40:18.551 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:42:18.512 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:42:18.513 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:44:18.550 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:44:18.551 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:46:18.488 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:46:18.488 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:48:18.517 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 15:48:18.517 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 15:59:42.778 NotebookApp] Starting buffering for cc1ea857-cfd0-4e5e-b47a-aaade2f22533:394626d3339e44178f569bd6524280dc
+[I 15:59:45.463 NotebookApp] Kernel restarted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 15:59:45.564 NotebookApp] Restoring connection for cc1ea857-cfd0-4e5e-b47a-aaade2f22533:394626d3339e44178f569bd6524280dc
+[I 15:59:49.742 NotebookApp] Replaying 3 buffered messages
+[I 16:00:18.494 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 16:00:18.495 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:20:18.631 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:20:18.631 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:22:18.557 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:22:18.558 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:24:18.679 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:24:18.679 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:26:18.662 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:26:18.663 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:28:18.583 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:28:18.583 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:30:18.582 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:30:18.587 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:32:18.638 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:32:18.639 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:34:18.622 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:34:18.623 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:36:18.715 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:36:18.716 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:37:19.558 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 18:37:33.246 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 18:38:18.601 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:38:18.601 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:40:18.574 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:40:18.574 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:41:22.009 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 18:43:19.484 NotebookApp] 302 GET / (172.16.24.254) 1479.030000ms
+[I 18:43:19.658 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:43:19.658 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:53:29.972 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 18:53:29.972 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 18:56:24.841 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 18:57:12.883 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:03:39.846 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 19:03:39.847 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 19:13:49.864 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 19:13:49.865 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 19:21:48.451 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:23:03.903 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:23:59.930 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 19:23:59.930 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 19:27:35.050 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:29:58.421 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:31:26.035 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:32:01.717 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:34:10.009 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 19:34:10.011 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 19:39:20.663 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:44:20.057 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 19:44:20.058 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 19:47:51.676 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 19:54:29.971 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 19:54:29.972 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 20:04:40.091 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 20:04:40.092 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 20:10:07.561 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 20:11:49.526 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 20:14:49.951 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 20:14:49.951 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 20:20:21.722 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 20:22:37.332 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 20:24:59.995 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 20:24:59.996 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 20:55:30.001 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 20:55:30.001 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 21:05:40.203 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 21:05:40.204 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 21:25:09.864 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:25:59.924 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 21:25:59.925 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 21:26:02.694 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:26:52.679 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:28:25.996 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:29:00.102 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:29:36.182 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:29:56.317 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:30:43.696 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:31:33.372 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:32:00.541 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:34:33.873 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:36:10.024 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 21:36:10.025 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 21:37:14.296 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:37:29.606 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:39:18.712 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:45:41.578 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:46:20.089 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 21:46:20.090 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 21:55:32.954 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:56:30.024 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 21:56:30.025 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 21:56:46.830 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:58:58.109 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 21:59:54.037 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 22:06:40.072 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 22:06:40.073 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 22:08:11.693 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 22:09:42.796 NotebookApp] Kernel interrupted: cc1ea857-cfd0-4e5e-b47a-aaade2f22533
+[I 22:16:50.002 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 22:16:50.003 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 22:17:31.441 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 22:17:31.441 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 22:18:01.699 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
+[W 22:18:01.700 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
+[I 22:18:56.048 NotebookApp] Starting buffering for cc1ea857-cfd0-4e5e-b47a-aaade2f22533:394626d3339e44178f569bd6524280dc
