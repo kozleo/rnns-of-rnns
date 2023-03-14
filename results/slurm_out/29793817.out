@@ -119,3 +119,13 @@ RuntimeError: Cannot enter into task <Task pending name='Task-56' coro=<HTTP1Ser
 [W 20:22:41.724 NotebookApp] Nudge: attempt 10 on kernel 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03
 [I 20:22:45.392 NotebookApp] Replaying 15 buffered messages
 [I 20:24:06.713 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+Exception in callback <TaskWakeupMethWrapper object at 0x2ab5bd8d5850>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2ab5bd8d5850>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-52' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1459' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+[I 20:28:06.776 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[I 20:46:07.451 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[I 20:46:26.954 NotebookApp] Starting buffering for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+slurmstepd: error: *** JOB 29793817 ON node053 CANCELLED AT 2023-03-14T08:14:33 DUE TO TIME LIMIT ***
