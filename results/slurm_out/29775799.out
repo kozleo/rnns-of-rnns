@@ -1,0 +1,6 @@
+usage: run.py [-h] --data_path DATA_PATH [-o OUTPUT_PATH] [--model {Z,R,RT,S}]
+              [--times TIMES] [--num_gradient_steps NUM_GRADIENT_STEPS]
+              [--hidden_size HIDDEN_SIZE] [--eval_every EVAL_EVERY] [--dt DT]
+              [--batch_size BATCH_SIZE] [--lr LR] [--step_size STEP_SIZE]
+              [--weight_decay WEIGHT_DECAY]
+run.py: error: the following arguments are required: --data_path

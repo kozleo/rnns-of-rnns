@@ -1,0 +1,19 @@
+[I 18:46:04.585 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 18:46:04.887 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 18:46:08.802 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-03-13 18:46:12.398 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-13 18:46:12.403 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 18:46:12.403 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 18:46:12.403 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 18:46:12.403 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 18:46:12.403 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 18:46:12.404 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 18:46:12.405 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-13 18:46:12.413 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-03-13 18:46:12.415 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-03-13 18:46:12.415 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 18:46:12.422 NotebookApp] Serving notebooks from local directory: /net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 18:46:12.422 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 18:46:12.422 NotebookApp] http://node053:9000/
+[I 18:46:12.422 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+slurmstepd: error: *** JOB 29770065 ON node053 CANCELLED AT 2023-03-13T20:13:48 ***

@@ -21,8 +21,26 @@ import scipy.integrate
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import pickle
 
-# functions for initializing the sparse matrices
+
+def pickle_store(filename, your_data, path="./"):
+    # Store data (serialize)
+
+    filepath = path + filename + ".pickle"
+
+    with open(filepath, "wb") as handle:
+        pickle.dump(your_data, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+def pickle_load(filename, your_data, path="./"):
+    # Load data (deserialize)
+    filepath = path + filename + ".pickle"
+
+    with open(filepath, "rb") as handle:
+        unserialized_data = pickle.load(handle)
+
+    return unserialized_data
 
 
 # function that checks the Theorem 1 condition for an input square matrix
@@ -282,3 +300,23 @@ def get_M_hat_given_W_hat(Ws):
         Ms.append(M)
 
     return torch.block_diag(*Ms)
+
+
+def get_performance(net, env, device):
+    # TODO: Make this into a function in neurogym
+    perf = 0
+    num_trial = 200
+    for i in range(num_trial):
+        env.new_trial()
+        ob, gt = env.ob, env.gt
+        ob = ob[:, np.newaxis, :]  # Add batch axis
+        inputs = torch.from_numpy(ob).type(torch.float).to(device)
+
+        action_pred, _ = net(inputs)
+        action_pred = action_pred.cpu().detach().numpy()
+        action_pred = np.argmax(action_pred, axis=-1)
+        perf += gt[-1] == action_pred[-1, 0]
+
+    perf /= num_trial
+    # print('Average performance in {:d} trials'.format(num_trial))
+    return perf

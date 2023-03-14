@@ -186,3 +186,4 @@ RuntimeError: Cannot enter into task <Task pending name='Task-4' coro=<HTTP1Serv
 [I 22:18:01.699 NotebookApp] Saving file at /notebooks/testing-notebook.ipynb
 [W 22:18:01.700 NotebookApp] Notebook notebooks/testing-notebook.ipynb is not trusted
 [I 22:18:56.048 NotebookApp] Starting buffering for cc1ea857-cfd0-4e5e-b47a-aaade2f22533:394626d3339e44178f569bd6524280dc
+slurmstepd: error: *** JOB 29624793 ON node035 CANCELLED AT 2023-03-04T22:21:34 ***

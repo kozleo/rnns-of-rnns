@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run.py", line 306, in <module>
+    optimizer = torch.optim.Adam(net.parameters(), lr=FLAGS.learning_rate)
+AttributeError: 'Namespace' object has no attribute 'learning_rate'

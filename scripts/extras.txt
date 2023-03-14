@@ -107,3 +107,166 @@ class VanillaRNNDiagonalMetric(nn.Module):
 
         # organize states and outputs and return
         return torch.stack(outputs).permute(1, 0, 2)
+
+
+import torch.jit as jit
+
+
+class vRNNLayer(nn.Module):
+    """Vanilla RNN layer in continuous time."""
+
+    def __init__(self, param_dict: dict):
+        super(vRNNLayer, self).__init__()
+
+        self.device = param_dict["device"]
+
+        # timestep for Euler integration
+        self.alpha = param_dict["alpha"]
+
+        # number of input, hidden, and output
+        self.input_size = param_dict["input_size"]
+        self.hidden_size = param_dict["hidden_size"]
+        self.output_size = param_dict["output_size"]
+
+        # leak rate of neurons
+        self.gamma = param_dict["gamma"]
+
+        # set nonlinearity of the vanilla RNN
+        self.nonlinearity = param_dict["nonlinearity"]
+
+        # set nonlinearity of the vRNN
+        if self.nonlinearity == "tanh":
+            self.phi = torch.tanh
+        if self.nonlinearity == "relu":
+            self.phi = F.relu
+        if self.nonlinearity == "none":
+            print("Nl = none")
+            self.phi = torch.nn.Identity()
+
+        # initialize weights
+        self.W_in = nn.Linear(
+            in_features=self.input_size, out_features=self.hidden_size
+        )
+        self.W_hh = nn.Linear(
+            in_features=self.hidden_size, out_features=self.hidden_size
+        )
+        self.W_out = nn.Linear(
+            in_features=self.hidden_size, out_features=self.output_size
+        )
+
+    def forward(self, input: Tensor) -> Tensor:
+        # initialize state at the origin. randn is there just in case we want to play with this later.
+        hx = torch.zeros(
+            size=(input.shape[1], self.hidden_size),
+            device=self.device,
+            requires_grad=False,
+        )
+
+        inputs = input.unbind(0)
+
+        # for storing RNN outputs and hidden states
+        outputs = []  # torch.jit.annotate(List[torch.Tensor], [])
+
+        # loop over input
+        for i in range(len(inputs)):
+            # save output and hidden states
+            outputs += [self.W_out(hx)]
+
+            # compute the RNN update
+            fx = -hx + self.phi(self.W_hh(hx) + self.W_in(inputs[i]))
+
+            # step hidden state foward using Euler discretization
+            hx = hx + self.alpha * (fx)
+
+        # organize states and outputs and return
+        return torch.stack(outputs)  # .permute(1, 0, 2)
+
+
+'''
+class VSRNN(jit.ScriptModule):
+    # Vanilla Symmetric RNN (VSRNN)
+    def __init__(self, param_dict: dict):
+        super().__init__()
+
+        self.device = param_dict["device"]
+
+        # timestep for Euler integration
+        self.alpha = param_dict["alpha"]
+
+        # number of input, hidden, and output
+        self.input_size = param_dict["input_size"]
+        self.hidden_size = param_dict["hidden_size"]
+        self.output_size = param_dict["output_size"]
+
+        # leak rate of neurons
+        self.gamma = param_dict["gamma"]
+
+        # set nonlinearity of the vanilla RNN
+        self.nonlinearity = param_dict["nonlinearity"]
+
+        # recurrence
+        self.rnn = nn.RNNCell(
+            self.input_size, self.hidden_size, nonlinearity=self.nonlinearity
+        )
+        # self.rnn.weight_hh = nn.Parameter(torch.eye(self.hidden_size))
+
+        # self.rnn.to(self.device)
+
+        """
+        # parameterize W = I - A.T @ A - epsilon*I
+        parametrize.register_parametrization(
+            self.rnn,
+            "weight_hh",
+            SymmetricStable(n=self.hidden_size, epsilon=1e-4, device=self.device),
+        )
+        """
+
+        # output weights
+        self.W_hidden_to_out = nn.Linear(
+            in_features=self.hidden_size, out_features=self.output_size
+        )
+
+    @jit.script_method
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        inputs = input.unbind(1)
+
+        outputs = torch.jit.annotate(List[torch.Tensor], [])
+
+        # Initialize hidden state
+        hx = (1 / self.hidden_size) * torch.randn(
+            input.shape[0], self.hidden_size, device=self.device
+        )
+
+        # loop over input
+        for i in range(input.shape[1]):
+            fx = -hx + self.rnn(inputs[i], hx)
+            hx = hx + self.alpha * (fx)
+            outputs += [self.W_hidden_to_out(hx)]
+
+        # organize outputs and return
+        return torch.stack(outputs).permute(1, 0, 2)
+
+    def _check_stability(self, stability_type="symmetric"):
+        with torch.no_grad():
+            # check if svd condition is met
+            if stability_type == "svd":
+                s = torch.linalg.svdvals(
+                    torch.diag(self.Phi)
+                    @ self.rnn.weight_hh
+                    @ torch.diag(self.Phi**-1)
+                )
+                if torch.any(s > 1):
+                    print("RNN is not provably stable.")
+                else:
+                    print("RNN is provably stable in given metric.")
+                return s
+
+            # check if symmetric eigenvalue condition is met
+            if stability_type == "symmetric":
+                e, _ = torch.linalg.eigh(self.rnn.weight_hh)
+                if torch.any(e > 1):
+                    print("RNN is not provably stable with symmetric condition. ")
+                else:
+                    print("RNN is provably stable with symmetric condition.")
+                return e
+'''

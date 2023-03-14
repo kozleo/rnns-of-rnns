@@ -1,0 +1,7 @@
+usage: run.py [-h] [--constraint {spectral,sym,None}]
+              [--num_gradient_steps NUM_GRADIENT_STEPS]
+              [--hidden_size HIDDEN_SIZE] [--eval_every EVAL_EVERY]
+              [--task_ID TASK_ID] [--dt DT] [--batch_size BATCH_SIZE]
+              [--learning_rate LEARNING_RATE] [--step_size STEP_SIZE]
+              [--weight_decay WEIGHT_DECAY]
+run.py: error: argument --constraint: invalid choice: 'None' (choose from 'spectral', 'sym', None)

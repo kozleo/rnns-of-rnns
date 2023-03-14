@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run.py", line 301, in <module>
+    net = models.RNNNet(
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/models.py", line 210, in __init__
+    self.rnn = CTRNN(input_size, hidden_size, **kwargs)
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/models.py", line 132, in __init__
+    self.input2h = nn.Linear(input_size, hidden_size, device=self.device)
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 96, in __init__
+    self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+RuntimeError: CUDA error: all CUDA-capable devices are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

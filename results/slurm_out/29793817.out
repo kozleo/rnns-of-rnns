@@ -1,0 +1,121 @@
+[I 20:15:01.255 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 20:15:01.729 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 20:15:05.754 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-03-13 20:15:11.082 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-13 20:15:11.093 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 20:15:11.093 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 20:15:11.093 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 20:15:11.093 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 20:15:11.093 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 20:15:11.093 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-13 20:15:11.094 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-13 20:15:11.102 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-03-13 20:15:11.104 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-03-13 20:15:11.105 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 20:15:11.112 NotebookApp] Serving notebooks from local directory: /net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 20:15:11.112 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 20:15:11.112 NotebookApp] http://node053:9000/
+[I 20:15:11.112 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 20:16:09.787 NotebookApp] 302 GET / (172.16.24.254) 0.810000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 20:18:06.091 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2ab5bddbb0a0>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2ab5bddbb0a0>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-45' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2ab5bddd3040>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2ab5bddd3040>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-54' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+[I 20:18:06.795 NotebookApp] Kernel started: 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03, name: conda-env-leokoz8-rnns-of-rnns-env-py
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/ipykernel/__init__.py", line 2, in <module>
+    from .connect import *
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/ipykernel/connect.py", line 10, in <module>
+    import jupyter_client
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/__init__.py", line 6, in <module>
+    from .asynchronous import AsyncKernelClient  # noqa
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/asynchronous/__init__.py", line 1, in <module>
+    from .client import AsyncKernelClient  # noqa
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/asynchronous/client.py", line 6, in <module>
+    from jupyter_client.channels import HBChannel
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/channels.py", line 15, in <module>
+    from .session import Session
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/session.py", line 47, in <module>
+    from zmq.eventloop.ioloop import IOLoop
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/zmq/eventloop/__init__.py", line 3, in <module>
+    from zmq.eventloop.ioloop import IOLoop
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/zmq/eventloop/ioloop.py", line 19, in <module>
+    from tornado import ioloop
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py", line 39, in <module>
+    from tornado.concurrent import (
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/concurrent.py", line 34, in <module>
+    from tornado.log import app_log
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/log.py", line 38, in <module>
+    import colorama  # type: ignore
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/colorama/__init__.py", line 2, in <module>
+    from .initialise import init, deinit, reinit, colorama_text, just_fix_windows_console
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/colorama/initialise.py", line 6, in <module>
+    from .ansitowin32 import AnsiToWin32
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/colorama/ansitowin32.py", line 7, in <module>
+    from .winterm import enable_vt_processing, WinTerm, WinColor, WinStyle
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/colorama/winterm.py", line 9, in <module>
+    from . import win32
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 934, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1033, in get_data
+KeyboardInterrupt
+[I 20:18:09.704 NotebookApp] Kernel restarted: 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03
+[W 20:18:10.116 NotebookApp] Replacing stale connection: 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 20:20:06.725 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 20:20:06.727 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 20:21:48.278 NotebookApp] Kernel interrupted: 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03
+Exception in callback <TaskWakeupMethWrapper object at 0x2ab5bdf747f0>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2ab5bdf747f0>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-55' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/te...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-385' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2ab5bdf74ee0>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2ab5bdf74ee0>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-56' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/se...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-385' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+[I 20:22:09.774 NotebookApp] Starting buffering for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[W 20:22:11.698 NotebookApp] Replacing stale connection: 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[I 20:22:11.751 NotebookApp] Restoring connection for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[E 20:22:11.752 NotebookApp] Uncaught exception GET /api/kernels/07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03/channels?session_id=d5f22e3eed9d4b008cda206800ae2b76 (172.16.24.254)
+    HTTPServerRequest(protocol='http', host='localhost:9000', method='GET', uri='/api/kernels/07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03/channels?session_id=d5f22e3eed9d4b008cda206800ae2b76', version='HTTP/1.1', remote_ip='172.16.24.254')
+    Traceback (most recent call last):
+      File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/websocket.py", line 942, in _accept_connection
+        open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+      File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/handlers.py", line 380, in open
+        connected = self.nudge()
+      File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/handlers.py", line 159, in nudge
+        iopub_channel = self.channels["iopub"]
+    KeyError: 'iopub'
+[I 20:22:14.640 NotebookApp] Starting buffering for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[I 20:22:14.694 NotebookApp] Restoring connection for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[I 20:22:34.263 NotebookApp] Starting buffering for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[I 20:22:37.109 NotebookApp] Kernel restarted: 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03
+[I 20:22:37.210 NotebookApp] Restoring connection for 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03:d5f22e3eed9d4b008cda206800ae2b76
+[W 20:22:41.724 NotebookApp] Nudge: attempt 10 on kernel 07c9d4cf-772b-4f5a-b4cf-e9bbf4515b03
+[I 20:22:45.392 NotebookApp] Replaying 15 buffered messages
+[I 20:24:06.713 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
