@@ -1,0 +1,98 @@
+[I 13:54:58.596 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 13:54:59.125 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 13:55:03.984 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-03-26 13:55:13.817 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-26 13:55:13.825 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 13:55:13.825 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 13:55:13.825 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 13:55:13.825 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 13:55:13.825 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 13:55:13.825 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 13:55:13.827 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-26 13:55:13.841 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-03-26 13:55:13.863 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-03-26 13:55:13.863 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 13:55:13.875 NotebookApp] Serving notebooks from local directory: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 13:55:13.876 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 13:55:13.876 NotebookApp] http://node066.cm.cluster:9000/
+[I 13:55:13.876 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 13:55:54.666 NotebookApp] 302 GET / (172.16.24.254) 9.640000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 13:56:27.820 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+Exception in callback <TaskStepMethWrapper object at 0x2b93b6bf5460>()
+handle: <Handle <TaskStepMethWrapper object at 0x2b93b6bf5460>()>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-40' coro=<RequestHandler._execute() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:1665> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:2361]> while another task <Task pending name='Task-39' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/traitlets/traitlets.py:1191: RuntimeWarning: coroutine 'RequestHandler._execute' was never awaited
+  for name in list(cache.keys()):
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Task was destroyed but it is pending!
+task: <Task pending name='Task-40' coro=<RequestHandler._execute() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:1665> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:2361]>
+[I 13:56:28.815 NotebookApp] Kernel started: bb10acdb-410f-440c-8c95-f0a69dbe95d5, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 13:58:30.056 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:58:30.151 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:00:28.680 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:00:28.691 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2b93b64865b0>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b93b64865b0>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-2' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-327' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+[I 14:02:34.846 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:02:34.850 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:02:34.960 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:02:34.961 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:02:35.104 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:02:35.105 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:02:35.278 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:02:35.281 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[W 14:02:35.944 NotebookApp] 404 GET /nbextensions/widgets/notebook/js/extension.js?v=20230326135459 (172.16.24.254) 112.940000ms referer=http://localhost:9000/notebooks/notebooks/neurogym_testing.ipynb
+Exception in callback <TaskWakeupMethWrapper object at 0x2b93b70f5b50>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b93b70f5b50>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-9' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /custom...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-424' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+[W 14:04:46.503 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 14:09:15.370 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:09:15.372 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:15:55.356 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:15:55.474 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[W 14:24:17.784 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 14:24:18.563 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:24:18.567 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:41:51.464 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:41:51.504 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 14:59:21.028 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 14:59:21.072 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 17:36:51.008 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 17:36:51.043 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 18:39:27.831 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 18:46:30.519 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 18:46:50.650 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 18:46:50.657 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 18:47:56.179 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 18:47:56.212 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 18:47:56.217 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 18:47:56.228 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 18:50:11.764 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 19:04:19.662 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 19:04:19.669 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 19:21:49.902 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 19:21:49.914 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 21:41:50.991 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 21:41:51.008 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 21:59:19.780 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 21:59:19.794 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 22:03:39.896 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 22:16:50.795 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 22:34:20.824 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 22:51:50.823 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 22:57:31.534 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
+[I 22:57:33.435 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb

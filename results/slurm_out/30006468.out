@@ -1,0 +1,153 @@
+[I 11:03:29.631 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 11:03:29.912 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 11:03:32.675 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-03-26 11:03:36.708 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-26 11:03:36.712 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 11:03:36.712 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 11:03:36.712 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 11:03:36.712 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 11:03:36.712 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 11:03:36.712 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-03-26 11:03:36.713 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-03-26 11:03:36.721 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-03-26 11:03:36.722 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-03-26 11:03:36.722 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 11:03:36.728 NotebookApp] Serving notebooks from local directory: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 11:03:36.728 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 11:03:36.728 NotebookApp] http://node090:9000/
+[I 11:03:36.728 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 11:05:20.566 NotebookApp] 302 GET / (172.16.24.254) 1.290000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[W 11:05:36.453 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2b56b4a66160>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b56b4a66160>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-1' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b56b45b9b80>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b56b45b9b80>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-2' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+[I 11:05:36.921 NotebookApp] Kernel started: 26f945bd-72ca-4de3-9411-eea2e4414d91, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 11:07:37.419 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 11:07:37.420 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 11:09:36.908 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 11:09:36.909 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 11:11:37.407 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:13:37.425 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:15:36.919 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:17:36.924 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:19:37.392 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:23:37.401 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:33:36.906 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:35:37.392 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:37:37.392 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:39:36.897 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:41:37.455 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:42:03.647 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 11:43:37.406 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:45:37.408 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:46:13.497 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 11:46:26.582 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 11:47:37.392 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:49:37.393 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:51:20.944 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 11:51:36.907 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:53:36.912 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:55:37.389 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 11:58:21.811 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 11:59:37.398 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 12:39:37.064 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 12:41:37.461 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 12:43:37.476 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 12:43:56.536 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:43:56.879 NotebookApp] Kernel started: 8497177b-5c51-4555-9f4f-4d5854d01db4, name: conda-env-leokoz8-rnns-of-rnns-env-py
+[I 12:44:36.715 NotebookApp] Starting buffering for 8497177b-5c51-4555-9f4f-4d5854d01db4:08770539f091487ebbfe58ca56260641
+[I 12:45:37.468 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 12:47:36.971 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 12:48:28.209 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:48:32.928 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 12:48:33.180 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 12:48:34.946 NotebookApp] Starting buffering for 26f945bd-72ca-4de3-9411-eea2e4414d91:37155ba34abe4a3d8c8fc68a956f7b01
+[I 12:48:36.270 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 12:48:36.272 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:49:34.555 NotebookApp] Kernel interrupted: 8497177b-5c51-4555-9f4f-4d5854d01db4
+[I 12:50:29.428 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 12:50:29.429 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:52:28.572 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 12:52:28.574 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:54:29.425 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 12:54:29.428 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:56:26.060 NotebookApp] Kernel interrupted: 8497177b-5c51-4555-9f4f-4d5854d01db4
+[I 12:56:28.573 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 12:56:28.574 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 12:58:28.760 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 12:58:28.761 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[W 13:02:12.120 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:02:29.427 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 13:02:29.429 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 13:04:12.961 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:04:12.962 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:06:12.959 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:06:12.960 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:08:12.958 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:08:12.959 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:10:12.968 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:10:12.969 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:10:46.342 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:11:32.608 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:12:12.944 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:12:12.945 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:14:13.468 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:14:13.469 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:16:12.953 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:16:12.954 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:17:12.072 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:18:12.940 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:18:12.942 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:18:15.820 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:20:12.962 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:20:12.963 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:26:23.927 NotebookApp] Kernel interrupted: 8497177b-5c51-4555-9f4f-4d5854d01db4
+[I 13:26:28.589 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 13:26:28.590 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 13:27:27.359 NotebookApp] Kernel interrupted: 8497177b-5c51-4555-9f4f-4d5854d01db4
+[I 13:28:29.453 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 13:28:29.455 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 13:34:13.543 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:34:13.544 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:36:13.083 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:36:13.084 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:36:56.371 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:38:12.963 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:38:12.964 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:39:02.959 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:39:59.491 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:40:12.942 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:40:12.943 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:40:15.738 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:40:24.530 NotebookApp] Kernel interrupted: 26f945bd-72ca-4de3-9411-eea2e4414d91
+[I 13:40:49.066 NotebookApp] Kernel interrupted: 8497177b-5c51-4555-9f4f-4d5854d01db4
+[I 13:42:12.972 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:42:12.973 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:42:29.457 NotebookApp] Saving file at /notebooks/neurogym_testing.ipynb
+[W 13:42:29.458 NotebookApp] Notebook notebooks/neurogym_testing.ipynb is not trusted
+[I 13:44:12.971 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:44:12.973 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:46:12.975 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:46:12.978 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:48:12.973 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:48:12.975 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:50:13.035 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:50:13.036 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:51:28.920 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:51:28.922 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 13:52:12.965 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[W 13:52:12.966 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+slurmstepd: error: *** JOB 30006468 ON node090 CANCELLED AT 2023-03-26T13:52:30 DUE TO PREEMPTION ***

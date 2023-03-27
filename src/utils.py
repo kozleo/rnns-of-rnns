@@ -320,3 +320,6 @@ def get_performance(net, env, device):
     perf /= num_trial
     # print('Average performance in {:d} trials'.format(num_trial))
     return perf
+
+def log_abs(tensor,eps = 1e-3):
+    return torch.log(torch.abs(tensor) + 1e-3)

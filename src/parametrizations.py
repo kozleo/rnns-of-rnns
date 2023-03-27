@@ -1,6 +1,11 @@
 import torch
 from torch import nn, Tensor
 
+class Symmetric(nn.Module):
+    def forward(self, X):
+        return X.triu() + X.triu(1).transpose(-1, -2)
+
+
 
 class SymmetricStable(nn.Module):
     def __init__(self, n: int, epsilon: float, device):
@@ -34,3 +39,4 @@ class InterarealMaskedAndStable(nn.Module):
     def forward(self, B: Tensor) -> Tensor:
         # L = B - M @ B @ M^-1
         return (B * self.B_mask) - self.M_hat @ (B * self.B_mask).T @ self.M_hat_inv
+
