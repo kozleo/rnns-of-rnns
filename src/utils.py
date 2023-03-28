@@ -22,6 +22,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import pickle
+from src import models
 
 
 def pickle_store(filename, your_data, path="./"):
@@ -321,5 +322,185 @@ def get_performance(net, env, device):
     # print('Average performance in {:d} trials'.format(num_trial))
     return perf
 
-def log_abs(tensor,eps = 1e-3):
+
+def log_abs(tensor, eps=1e-3):
     return torch.log(torch.abs(tensor) + 1e-3)
+
+
+def get_directory_names(path_string):
+    """
+    This function takes a string containing a path of the form 'dir1/dir2/etc'
+    and returns a list of the directory names in the form ['dir1', 'dir2', 'etc'].
+    """
+    directories = path_string.split("/")
+    return [directory for directory in directories if directory != ""]
+
+
+def get_constraint_type_and_task(PATH):
+    dir_list = get_directory_names(PATH)
+    return dir_list[-3], dir_list[-2]
+
+
+def get_model_info(PATH):
+    param_dict = torch.load(PATH)
+
+    hidden_size = param_dict["rnn.h2h.bias"].shape[0]
+    input_size = param_dict["rnn.input2h.weight"].shape[1]
+    output_size = param_dict["fc.weight"].shape[0]
+
+    c_type, task = get_constraint_type_and_task(PATH)
+
+    return input_size, hidden_size, output_size, c_type, task
+
+
+def load_model_from_path(PATH):
+    input_size, hidden_size, output_size, c_type, task = get_model_info(PATH)
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    net = models.RNNNet(
+        input_size=input_size,
+        hidden_size=hidden_size,
+        output_size=output_size,
+        device=device,
+        dt=30,
+        constraint=c_type,
+    ).to(device)
+
+    net.load_state_dict(torch.load(PATH))
+
+    return net
+
+
+def get_path_from_task_and_constraint(task_and_constraint):
+    # task_and_constraint: tuple of (task,constraint)
+
+    base_path = "/om2/user/leokoz8/code/rnns-of-rnns/models"
+
+    return (
+        base_path
+        + f"/{task_and_constraint[1]}"
+        + f"/{task_and_constraint[0]}"
+        + "/small_model.pickle"
+    )
+
+
+def get_stacked_weights_and_biases(tasks_and_constraints):
+    input2h_weight_bar = []
+    rnn_input2h_bias_bar = []
+    rnn_h2h_weight_bar = []
+    rnn_h2h_bias_bar = []
+    fc_weight_bar = []
+    fc_bias_bar = []
+
+    for el in tasks_and_constraints:
+        path = get_path_from_task_and_constraint(el)
+
+        param_dict = torch.load(path)
+
+        net = load_model_from_path(path)
+
+        # print(param_dict)
+
+        input2h_weight_bar.append(param_dict["rnn.input2h.weight"])
+        rnn_input2h_bias_bar.append(param_dict["rnn.input2h.bias"])
+        rnn_h2h_weight_bar.append(net.rnn.h2h.weight)
+        rnn_h2h_bias_bar.append(param_dict["rnn.h2h.bias"])
+        fc_weight_bar.append(param_dict["fc.weight"])
+        fc_bias_bar.append(param_dict["fc.bias"])
+
+    return (
+        input2h_weight_bar,
+        rnn_input2h_bias_bar,
+        rnn_h2h_weight_bar,
+        rnn_h2h_bias_bar,
+        fc_weight_bar,
+        fc_bias_bar,
+    )
+
+
+def build_GWNET_from_pretrained(
+    tasks_and_constraints, env, device, pretrained_hidden_size=32, gw_hidden_size=16
+):
+    p = len(tasks_and_constraints) + 1
+    c_type = tasks_and_constraints[0][1]
+
+    # import pretrained weights and biases
+
+    (
+        input2h_weight_bar,
+        rnn_input2h_bias,
+        rnn_h2h_weight,
+        rnn_h2h_bias,
+        fc_weight_bar,
+        fc_bias_bar,
+    ) = get_stacked_weights_and_biases(tasks_and_constraints)
+
+    stacked_wb = {
+        "input2h_weight_bar": input2h_weight_bar,
+        "rnn_input2h_bias": rnn_input2h_bias,
+        "rnn_h2h_weight": rnn_h2h_weight,
+        "rnn_h2h_bias": rnn_h2h_bias,
+        "fc_weight_bar": fc_weight_bar,
+        "fc_bias_bar": fc_bias_bar,
+    }
+
+    # Build GW Net
+
+    ns = [pretrained_hidden_size for _ in range(p - 1)]
+    ns.append(gw_hidden_size)
+
+    input_size = env.observation_space.shape[0]
+    output_size = env.action_space.n
+
+    A_tril = torch.zeros((len(ns), len(ns)))
+    A_tril[-1, :] = 1
+    B_mask = F.dropout(create_mask_given_A(A_tril, ns), 0.5)
+
+    # Create global workspace weights and biases here
+    W_hat, Ws = create_random_block_stable_symmetric_weights([gw_hidden_size])
+    W_hat = W_hat.to(device)
+    tmp = nn.Linear(gw_hidden_size, gw_hidden_size, bias=True, device=device)
+    b_hat = tmp.bias
+
+    stacked_wb["rnn_h2h_weight"].append(W_hat)
+    stacked_wb["rnn_h2h_bias"].append(b_hat)
+
+    M_hat = torch.eye(sum(ns), device=device)  # utils.get_M_given_sym_W(W_hat)
+
+    # M_hat.to(device)
+    B_mask = B_mask.to(device)
+
+    net = models.GW_RNNNet(
+        stacked_wb, input_size, ns, output_size, M_hat, B_mask, device, dt=30
+    )
+    net.to(device)
+
+    return net
+
+
+def centorrino_theta(b, Lambda, device):
+    # Method introduced in Centorrino, 2023
+
+    scalar_theta = lambda z: 2 * b * (1 + torch.sqrt(1 - z / b))
+
+    n = Lambda.shape[0]
+    theta = torch.zeros(n)
+
+    for i in range(n):
+        theta[i] = scalar_theta(Lambda[i])
+
+    return theta.to(device)
+
+
+def compute_metric_from_sym_weights(W):
+    # Uses the metric introduced in Centorrino, 2023
+
+    L, U = torch.linalg.eigh(W)
+
+    alpha_W = torch.max(L)
+
+    with torch.no_grad():
+        theta = centorrino_theta(alpha_W, L)
+
+    return U @ torch.diag(theta**2) @ U.T

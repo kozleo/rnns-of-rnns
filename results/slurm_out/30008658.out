@@ -96,3 +96,11 @@ RuntimeError: Cannot enter into task <Task pending name='Task-9' coro=<HTTP1Serv
 [I 22:51:50.823 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
 [I 22:57:31.534 NotebookApp] Kernel interrupted: bb10acdb-410f-440c-8c95-f0a69dbe95d5
 [I 22:57:33.435 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
+[I 22:58:15.319 NotebookApp] Starting buffering for bb10acdb-410f-440c-8c95-f0a69dbe95d5:cd0563addd2a476998d42889956fd966
+Exception in callback <TaskWakeupMethWrapper object at 0x2b93b6bf5040>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b93b6bf5040>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-10' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-43670' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+slurmstepd: error: *** JOB 30008658 ON node066 CANCELLED AT 2023-03-27T01:54:34 DUE TO TIME LIMIT ***

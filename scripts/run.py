@@ -331,7 +331,7 @@ if __name__ == "__main__":
     else:
         print(f"Folder '{folder_name}' already exists!")
 
-    torch.save(net_trained.state_dict(), folder_name + '/model.pickle')
+    torch.save(net_trained.state_dict(), folder_name + '/small_model.pickle')
 
 
 
