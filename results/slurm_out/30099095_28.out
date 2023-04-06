@@ -1,0 +1,51 @@
+Gradient step: 0 	 Performance: 0.06 	 Training loss: 3.28
+Gradient step: 24 	 Performance: 0.045 	 Training loss: 17.05
+Gradient step: 49 	 Performance: 0.21 	 Training loss: 9.56
+Gradient step: 74 	 Performance: 0.515 	 Training loss: 5.53
+Gradient step: 99 	 Performance: 0.71 	 Training loss: 3.58
+Gradient step: 124 	 Performance: 0.845 	 Training loss: 2.61
+Gradient step: 149 	 Performance: 0.805 	 Training loss: 2.01
+Gradient step: 174 	 Performance: 0.88 	 Training loss: 1.59
+Gradient step: 199 	 Performance: 0.96 	 Training loss: 1.29
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/None/ctxdlydm1intr/None' already exists!
+Gradient step: 0 	 Performance: 0.065 	 Training loss: 3.03
+Gradient step: 24 	 Performance: 0.045 	 Training loss: 15.54
+Gradient step: 49 	 Performance: 0.205 	 Training loss: 8.86
+Gradient step: 74 	 Performance: 0.47 	 Training loss: 5.40
+Gradient step: 99 	 Performance: 0.545 	 Training loss: 3.95
+Gradient step: 124 	 Performance: 0.635 	 Training loss: 3.36
+Gradient step: 149 	 Performance: 0.81 	 Training loss: 2.51
+Gradient step: 174 	 Performance: 0.835 	 Training loss: 2.03
+Gradient step: 199 	 Performance: 0.9 	 Training loss: 1.69
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/ctxdlydm1intr/conformal' already exists!
+Gradient step: 0 	 Performance: 0.045 	 Training loss: 3.28
+Gradient step: 24 	 Performance: 0.085 	 Training loss: 16.71
+Gradient step: 49 	 Performance: 0.1 	 Training loss: 9.37
+Gradient step: 74 	 Performance: 0.46 	 Training loss: 5.72
+Gradient step: 99 	 Performance: 0.635 	 Training loss: 3.58
+Gradient step: 124 	 Performance: 0.8 	 Training loss: 2.69
+Gradient step: 149 	 Performance: 0.83 	 Training loss: 2.02
+Gradient step: 174 	 Performance: 0.875 	 Training loss: 1.57
+Gradient step: 199 	 Performance: 0.925 	 Training loss: 1.25
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/ctxdlydm1intr/None' already exists!
+Gradient step: 0 	 Performance: 0.06 	 Training loss: 3.02
+Gradient step: 24 	 Performance: 0.06 	 Training loss: 16.52
+Gradient step: 49 	 Performance: 0.185 	 Training loss: 9.34
+Gradient step: 74 	 Performance: 0.31 	 Training loss: 5.90
+Gradient step: 99 	 Performance: 0.465 	 Training loss: 4.42
+Gradient step: 124 	 Performance: 0.71 	 Training loss: 3.51
+Gradient step: 149 	 Performance: 0.81 	 Training loss: 2.86
+Gradient step: 174 	 Performance: 0.81 	 Training loss: 2.25
+Gradient step: 199 	 Performance: 0.835 	 Training loss: 1.79
+Gradient step: 224 	 Performance: 0.91 	 Training loss: 1.58
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/ctxdlydm1intr/conformal' already exists!
+Gradient step: 0 	 Performance: 0.07 	 Training loss: 3.27
+Gradient step: 24 	 Performance: 0.06 	 Training loss: 18.58
+Gradient step: 49 	 Performance: 0.085 	 Training loss: 8.95
+Gradient step: 74 	 Performance: 0.455 	 Training loss: 5.50
+Gradient step: 99 	 Performance: 0.6 	 Training loss: 3.73
+Gradient step: 124 	 Performance: 0.845 	 Training loss: 2.67
+Gradient step: 149 	 Performance: 0.88 	 Training loss: 1.98
+Gradient step: 174 	 Performance: 0.85 	 Training loss: 1.55
+Gradient step: 199 	 Performance: 0.92 	 Training loss: 1.26
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/ctxdlydm1intr/None' already exists!

@@ -1,0 +1,36 @@
+Gradient step: 0 	 Performance: 0.095 	 Training loss: 3.81
+Gradient step: 24 	 Performance: 0.05 	 Training loss: 31.95
+Gradient step: 49 	 Performance: 0.06 	 Training loss: 28.09
+Gradient step: 74 	 Performance: 0.045 	 Training loss: 26.54
+Gradient step: 99 	 Performance: 0.06 	 Training loss: 24.62
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/None/dlygointl/None' created successfully!
+usage: run_pretrained.py [-h] [--constraint {spectral,sym,None}]
+                         [--interareal_constraint {spectral,sym,None}]
+                         [--num_gradient_steps NUM_GRADIENT_STEPS]
+                         [--GW_hidden_size GW_HIDDEN_SIZE]
+                         [--eval_every EVAL_EVERY] [--task_ID TASK_ID]
+                         [--dt DT] [--batch_size BATCH_SIZE]
+                         [--learning_rate LEARNING_RATE]
+                         [--step_size STEP_SIZE] [--weight_decay WEIGHT_DECAY]
+run_pretrained.py: error: argument --interareal_constraint: invalid choice: 'conformal' (choose from 'spectral', 'sym', 'None')
+Gradient step: 0 	 Performance: 0.075 	 Training loss: 3.82
+Gradient step: 24 	 Performance: 0.085 	 Training loss: 31.91
+Gradient step: 49 	 Performance: 0.065 	 Training loss: 28.20
+Gradient step: 74 	 Performance: 0.035 	 Training loss: 26.72
+Gradient step: 99 	 Performance: 0.045 	 Training loss: 24.80
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygointl/None' created successfully!
+usage: run_pretrained.py [-h] [--constraint {spectral,sym,None}]
+                         [--interareal_constraint {spectral,sym,None}]
+                         [--num_gradient_steps NUM_GRADIENT_STEPS]
+                         [--GW_hidden_size GW_HIDDEN_SIZE]
+                         [--eval_every EVAL_EVERY] [--task_ID TASK_ID]
+                         [--dt DT] [--batch_size BATCH_SIZE]
+                         [--learning_rate LEARNING_RATE]
+                         [--step_size STEP_SIZE] [--weight_decay WEIGHT_DECAY]
+run_pretrained.py: error: argument --interareal_constraint: invalid choice: 'conformal' (choose from 'spectral', 'sym', 'None')
+Gradient step: 0 	 Performance: 0.06 	 Training loss: 3.81
+Gradient step: 24 	 Performance: 0.07 	 Training loss: 31.82
+Gradient step: 49 	 Performance: 0.05 	 Training loss: 28.13
+Gradient step: 74 	 Performance: 0.05 	 Training loss: 26.84
+Gradient step: 99 	 Performance: 0.045 	 Training loss: 24.84
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygointl/None' created successfully!

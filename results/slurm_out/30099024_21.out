@@ -1,0 +1,60 @@
+Gradient step: 0 	 Performance: 0.04 	 Training loss: 3.81
+Gradient step: 24 	 Performance: 0.08 	 Training loss: 31.86
+Gradient step: 49 	 Performance: 0.06 	 Training loss: 28.02
+Gradient step: 74 	 Performance: 0.055 	 Training loss: 26.61
+Gradient step: 99 	 Performance: 0.06 	 Training loss: 24.61
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/None/dlygointl/None' already exists!
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run_pretrained.py", line 106, in <module>
+    utils.pickle_store(folder_name + '/perf_over_training.pickle', perf_over_training, path="./")
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/utils.py", line 33, in pickle_store
+    with open(filepath, "wb") as handle:
+FileNotFoundError: [Errno 2] No such file or directory: './/om2/user/leokoz8/code/rnns-of-rnns/models/None/dlygointl/None/perf_over_training.pickle.pickle'
+Gradient step: 0 	 Performance: 0.05 	 Training loss: 2.98
+Gradient step: 24 	 Performance: 0.02 	 Training loss: 31.82
+Gradient step: 49 	 Performance: 0.095 	 Training loss: 27.04
+Gradient step: 74 	 Performance: 0.045 	 Training loss: 23.72
+Gradient step: 99 	 Performance: 0.065 	 Training loss: 21.57
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygointl/conformal' created successfully!
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run_pretrained.py", line 106, in <module>
+    utils.pickle_store(folder_name + '/perf_over_training.pickle', perf_over_training, path="./")
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/utils.py", line 33, in pickle_store
+    with open(filepath, "wb") as handle:
+FileNotFoundError: [Errno 2] No such file or directory: './/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygointl/conformal/perf_over_training.pickle.pickle'
+Gradient step: 0 	 Performance: 0.025 	 Training loss: 3.82
+Gradient step: 24 	 Performance: 0.065 	 Training loss: 31.83
+Gradient step: 49 	 Performance: 0.035 	 Training loss: 28.07
+Gradient step: 74 	 Performance: 0.065 	 Training loss: 26.61
+Gradient step: 99 	 Performance: 0.045 	 Training loss: 24.62
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygointl/None' already exists!
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run_pretrained.py", line 106, in <module>
+    utils.pickle_store(folder_name + '/perf_over_training.pickle', perf_over_training, path="./")
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/utils.py", line 33, in pickle_store
+    with open(filepath, "wb") as handle:
+FileNotFoundError: [Errno 2] No such file or directory: './/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygointl/None/perf_over_training.pickle.pickle'
+Gradient step: 0 	 Performance: 0.065 	 Training loss: 2.98
+Gradient step: 24 	 Performance: 0.04 	 Training loss: 31.88
+Gradient step: 49 	 Performance: 0.045 	 Training loss: 26.99
+Gradient step: 74 	 Performance: 0.06 	 Training loss: 23.66
+Gradient step: 99 	 Performance: 0.07 	 Training loss: 21.53
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygointl/conformal' created successfully!
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run_pretrained.py", line 106, in <module>
+    utils.pickle_store(folder_name + '/perf_over_training.pickle', perf_over_training, path="./")
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/utils.py", line 33, in pickle_store
+    with open(filepath, "wb") as handle:
+FileNotFoundError: [Errno 2] No such file or directory: './/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygointl/conformal/perf_over_training.pickle.pickle'
+Gradient step: 0 	 Performance: 0.065 	 Training loss: 3.83
+Gradient step: 24 	 Performance: 0.075 	 Training loss: 31.96
+Gradient step: 49 	 Performance: 0.035 	 Training loss: 28.05
+Gradient step: 74 	 Performance: 0.05 	 Training loss: 26.77
+Gradient step: 99 	 Performance: 0.06 	 Training loss: 24.78
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygointl/None' already exists!
+Traceback (most recent call last):
+  File "/om2/user/leokoz8/code/rnns-of-rnns/scripts/run_pretrained.py", line 106, in <module>
+    utils.pickle_store(folder_name + '/perf_over_training.pickle', perf_over_training, path="./")
+  File "/net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns/src/utils.py", line 33, in pickle_store
+    with open(filepath, "wb") as handle:
+FileNotFoundError: [Errno 2] No such file or directory: './/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygointl/None/perf_over_training.pickle.pickle'

@@ -1,0 +1,48 @@
+Gradient step: 0 	 Performance: 0.055 	 Training loss: 3.00
+Gradient step: 24 	 Performance: 0.075 	 Training loss: 46.22
+Gradient step: 49 	 Performance: 0.085 	 Training loss: 28.09
+Gradient step: 74 	 Performance: 0.15 	 Training loss: 22.25
+Gradient step: 99 	 Performance: 0.3 	 Training loss: 14.84
+Gradient step: 124 	 Performance: 0.6 	 Training loss: 9.95
+Gradient step: 149 	 Performance: 0.805 	 Training loss: 10.08
+Gradient step: 174 	 Performance: 0.34 	 Training loss: 8.48
+Gradient step: 199 	 Performance: 0.915 	 Training loss: 8.32
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/None/dlygoseql/None' created successfully!
+Gradient step: 0 	 Performance: 0.055 	 Training loss: 3.05
+Gradient step: 24 	 Performance: 0.045 	 Training loss: 40.50
+Gradient step: 49 	 Performance: 0.075 	 Training loss: 27.67
+Gradient step: 74 	 Performance: 0.58 	 Training loss: 19.04
+Gradient step: 99 	 Performance: 0.79 	 Training loss: 9.49
+Gradient step: 124 	 Performance: 0.845 	 Training loss: 6.25
+Gradient step: 149 	 Performance: 0.96 	 Training loss: 3.32
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygoseql/conformal' created successfully!
+Gradient step: 0 	 Performance: 0.05 	 Training loss: 3.00
+Gradient step: 24 	 Performance: 0.05 	 Training loss: 42.76
+Gradient step: 49 	 Performance: 0.045 	 Training loss: 27.18
+Gradient step: 74 	 Performance: 0.175 	 Training loss: 19.38
+Gradient step: 99 	 Performance: 0.525 	 Training loss: 11.61
+Gradient step: 124 	 Performance: 0.88 	 Training loss: 9.00
+Gradient step: 149 	 Performance: 0.88 	 Training loss: 7.89
+Gradient step: 174 	 Performance: 0.075 	 Training loss: 12.70
+Gradient step: 199 	 Performance: 0.335 	 Training loss: 29.55
+Gradient step: 224 	 Performance: 1.0 	 Training loss: 8.20
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/dlygoseql/None' created successfully!
+Gradient step: 0 	 Performance: 0.04 	 Training loss: 3.03
+Gradient step: 24 	 Performance: 0.055 	 Training loss: 39.97
+Gradient step: 49 	 Performance: 0.05 	 Training loss: 27.56
+Gradient step: 74 	 Performance: 0.515 	 Training loss: 19.75
+Gradient step: 99 	 Performance: 0.82 	 Training loss: 9.35
+Gradient step: 124 	 Performance: 0.265 	 Training loss: 7.03
+Gradient step: 149 	 Performance: 0.9 	 Training loss: 7.83
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygoseql/conformal' created successfully!
+Gradient step: 0 	 Performance: 0.055 	 Training loss: 2.99
+Gradient step: 24 	 Performance: 0.035 	 Training loss: 45.69
+Gradient step: 49 	 Performance: 0.065 	 Training loss: 27.88
+Gradient step: 74 	 Performance: 0.115 	 Training loss: 22.61
+Gradient step: 99 	 Performance: 0.48 	 Training loss: 15.52
+Gradient step: 124 	 Performance: 0.59 	 Training loss: 9.20
+Gradient step: 149 	 Performance: 0.755 	 Training loss: 7.48
+Gradient step: 174 	 Performance: 0.06 	 Training loss: 5.40
+Gradient step: 199 	 Performance: 0.81 	 Training loss: 9.53
+Gradient step: 224 	 Performance: 1.0 	 Training loss: 2.41
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/dlygoseql/None' created successfully!

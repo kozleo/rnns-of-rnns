@@ -40,3 +40,13 @@ class InterarealMaskedAndStable(nn.Module):
         # L = B - M @ B @ M^-1
         return (B * self.B_mask) - self.M_hat @ (B * self.B_mask).T @ self.M_hat_inv
 
+class InterarealMasked(nn.Module):
+    def __init__(self, n: int, M_hat: Tensor, B_mask: Tensor, device):
+        super().__init__()
+        self.device = device
+
+        self.register_buffer("Id", torch.eye(n, device=self.device))
+        self.register_buffer("B_mask", B_mask)
+
+    def forward(self, B: Tensor) -> Tensor:        
+        return B * self.B_mask

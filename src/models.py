@@ -240,7 +240,7 @@ class GW_CTRNN(nn.Module):
     """
 
     def __init__(
-        self, stacked_wb, input_size, ns, device, M_hat, B_mask, dt = None, **kwargs
+        self, stacked_wb, input_size, ns, device, M_hat, B_mask, interareal_constraint, dt = None, **kwargs
     ):
         super().__init__()
         self.input_size = input_size
@@ -283,20 +283,31 @@ class GW_CTRNN(nn.Module):
         #spectral_norm(self.L_hat, name = "weight")
 
 
-            
-        parametrize.register_parametrization(
-            self.L_hat,
-            "weight",
-            parametrizations.InterarealMaskedAndStable(
-                n = self.hidden_size,
-                M_hat = self.M_hat,
-                B_mask = self.B_mask,
-                device = self.device,
-            ),
-        )
-        
+        if interareal_constraint == 'conformal':    
+            parametrize.register_parametrization(
+                self.L_hat,
+                "weight",
+                parametrizations.InterarealMaskedAndStable(
+                    n = self.hidden_size,
+                    M_hat = self.M_hat,
+                    B_mask = self.B_mask,
+                    device = self.device,
+                ),
+            )
 
-        #self.L_hat.weight.requires_grad = True
+        if interareal_constraint == 'None':        
+            parametrize.register_parametrization(
+                self.L_hat,
+                "weight",
+                parametrizations.InterarealMasked(
+                    n = self.hidden_size,
+                    M_hat = self.M_hat,
+                    B_mask = self.B_mask,
+                    device = self.device,
+                ),
+            )
+
+
 
     def init_hidden(self, input_shape):
         batch_size = input_shape[1]
@@ -362,6 +373,7 @@ class GW_RNNNet(nn.Module):
         M_hat,
         B_mask,
         device,
+        interareal_constraint,
         dt,
         **kwargs
     ):
@@ -375,6 +387,7 @@ class GW_RNNNet(nn.Module):
         self.M_hat = M_hat
         self.B_mask = B_mask
         self.dt = dt
+        self.interareal_constraint = interareal_constraint
 
         # Continuous time RNN
         self.rnn = GW_CTRNN(
@@ -386,6 +399,7 @@ class GW_RNNNet(nn.Module):
             M_hat=self.M_hat,
             B_mask=self.B_mask,
             dt=self.dt,
+            interareal_constraint = self.interareal_constraint
         )
 
         # Add an output layer

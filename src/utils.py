@@ -34,7 +34,7 @@ def pickle_store(filename, your_data, path="./"):
         pickle.dump(your_data, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def pickle_load(filename, your_data, path="./"):
+def pickle_load(filename, path="./"):
     # Load data (deserialize)
     filepath = path + filename + ".pickle"
 
@@ -303,26 +303,6 @@ def get_M_hat_given_W_hat(Ws):
     return torch.block_diag(*Ms)
 
 
-def get_performance(net, env, device):
-    # TODO: Make this into a function in neurogym
-    perf = 0
-    num_trial = 200
-    for i in range(num_trial):
-        env.new_trial()
-        ob, gt = env.ob, env.gt
-        ob = ob[:, np.newaxis, :]  # Add batch axis
-        inputs = torch.from_numpy(ob).type(torch.float).to(device)
-
-        action_pred, _ = net(inputs)
-        action_pred = action_pred.cpu().detach().numpy()
-        action_pred = np.argmax(action_pred, axis=-1)
-        perf += gt[-1] == action_pred[-1, 0]
-
-    perf /= num_trial
-    # print('Average performance in {:d} trials'.format(num_trial))
-    return perf
-
-
 def log_abs(tensor, eps=1e-3):
     return torch.log(torch.abs(tensor) + 1e-3)
 
@@ -421,7 +401,7 @@ def get_stacked_weights_and_biases(tasks_and_constraints):
 
 def build_GWNET_from_pretrained(
     tasks_and_constraints, env, device, pretrained_hidden_size=32, gw_hidden_size=16
-):
+,interareal_constraint = 'conformal'):
     p = len(tasks_and_constraints) + 1
     c_type = tasks_and_constraints[0][1]
 
@@ -455,7 +435,28 @@ def build_GWNET_from_pretrained(
 
     A_tril = torch.zeros((len(ns), len(ns)))
     A_tril[-1, :] = 1
-    B_mask = F.dropout(create_mask_given_A(A_tril, ns), 0.5)
+
+    B_mask = create_mask_given_A(A_tril, ns)
+
+    if interareal_constraint == 'None':
+        # No stability constraint on interareal weights
+        B_mask = 0.5*(B_mask + B_mask.T)
+        M_hat = torch.eye(sum(ns), device=device)
+
+    if interareal_constraint == 'conformal':
+
+        # Stability constraint on interareal weights, conformal to the stability constraint on the subnetworks
+
+        if c_type == 'spectral':
+            M_hat = torch.eye(sum(ns), device=device)
+
+        if c_type == 'sym' or c_type == 'None':            
+            with torch.no_grad():        
+                Ms = compute_metric_from_weights(stacked_wb["rnn_h2h_weight"], ctype = c_type, device = device)
+                M_hat = torch.block_diag(*Ms)
+
+    
+    B_mask = F.dropout(B_mask, 0.5)
 
     # Create global workspace weights and biases here
     W_hat, Ws = create_random_block_stable_symmetric_weights([gw_hidden_size])
@@ -466,13 +467,12 @@ def build_GWNET_from_pretrained(
     stacked_wb["rnn_h2h_weight"].append(W_hat)
     stacked_wb["rnn_h2h_bias"].append(b_hat)
 
-    M_hat = torch.eye(sum(ns), device=device)  # utils.get_M_given_sym_W(W_hat)
 
-    # M_hat.to(device)
+
     B_mask = B_mask.to(device)
 
     net = models.GW_RNNNet(
-        stacked_wb, input_size, ns, output_size, M_hat, B_mask, device, dt=30
+        stacked_wb, input_size, ns, output_size, M_hat, B_mask, device, interareal_constraint, dt=30
     )
     net.to(device)
 
@@ -493,7 +493,7 @@ def centorrino_theta(b, Lambda, device):
     return theta.to(device)
 
 
-def compute_metric_from_sym_weights(W):
+def compute_metric_from_sym_weight_matrix(W,device):
     # Uses the metric introduced in Centorrino, 2023
 
     L, U = torch.linalg.eigh(W)
@@ -501,6 +501,36 @@ def compute_metric_from_sym_weights(W):
     alpha_W = torch.max(L)
 
     with torch.no_grad():
-        theta = centorrino_theta(alpha_W, L)
+        theta = centorrino_theta(alpha_W, L, device)
 
     return U @ torch.diag(theta**2) @ U.T
+
+def compute_metric_from_weights(Ws,ctype,device):
+
+    Ms = []
+
+    for W in Ws:
+        if ctype == 'sym':
+            M = compute_metric_from_sym_weight_matrix(W, device)
+        if ctype == 'None':
+            M = compute_linear_metric_from_weight_matrix(W, device)
+        
+        Ms.append(M)
+
+    return Ms
+
+
+from scipy import linalg
+
+def compute_linear_metric_from_weight_matrix(W, device):
+    # Solves the Lyapunov equation to obtain metric
+
+    W = W.detach().cpu().numpy()
+
+    I = np.eye(W.shape[0])
+
+    J = -I + W
+
+    M = linalg.solve_continuous_lyapunov(J.T, -I)
+
+    return torch.from_numpy(M).to(device).float()

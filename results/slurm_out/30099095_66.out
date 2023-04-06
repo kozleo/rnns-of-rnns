@@ -1,0 +1,44 @@
+Gradient step: 0 	 Performance: 0.08 	 Training loss: 3.51
+Gradient step: 24 	 Performance: 0.055 	 Training loss: 56.14
+Gradient step: 49 	 Performance: 0.075 	 Training loss: 34.13
+Gradient step: 74 	 Performance: 0.07 	 Training loss: 24.04
+Gradient step: 99 	 Performance: 0.15 	 Training loss: 21.25
+Gradient step: 124 	 Performance: 0.62 	 Training loss: 19.11
+Gradient step: 149 	 Performance: 0.75 	 Training loss: 17.10
+Gradient step: 174 	 Performance: 0.885 	 Training loss: 15.02
+Gradient step: 199 	 Performance: 1.0 	 Training loss: 12.87
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/None/rtantiseql/None' created successfully!
+Gradient step: 0 	 Performance: 0.065 	 Training loss: 2.95
+Gradient step: 24 	 Performance: 0.03 	 Training loss: 42.95
+Gradient step: 49 	 Performance: 0.0 	 Training loss: 26.20
+Gradient step: 74 	 Performance: 0.405 	 Training loss: 21.10
+Gradient step: 99 	 Performance: 0.87 	 Training loss: 17.48
+Gradient step: 124 	 Performance: 0.99 	 Training loss: 14.05
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/rtantiseql/conformal' created successfully!
+Gradient step: 0 	 Performance: 0.04 	 Training loss: 3.53
+Gradient step: 24 	 Performance: 0.06 	 Training loss: 55.39
+Gradient step: 49 	 Performance: 0.06 	 Training loss: 32.42
+Gradient step: 74 	 Performance: 0.04 	 Training loss: 23.47
+Gradient step: 99 	 Performance: 0.25 	 Training loss: 20.76
+Gradient step: 124 	 Performance: 0.8 	 Training loss: 18.40
+Gradient step: 149 	 Performance: 0.965 	 Training loss: 16.06
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/sym/rtantiseql/None' created successfully!
+Gradient step: 0 	 Performance: 0.065 	 Training loss: 2.95
+Gradient step: 24 	 Performance: 0.045 	 Training loss: 43.27
+Gradient step: 49 	 Performance: 0.0 	 Training loss: 26.64
+Gradient step: 74 	 Performance: 0.27 	 Training loss: 21.24
+Gradient step: 99 	 Performance: 0.82 	 Training loss: 17.81
+Gradient step: 124 	 Performance: 0.81 	 Training loss: 14.27
+Gradient step: 149 	 Performance: 0.72 	 Training loss: 11.93
+Gradient step: 174 	 Performance: 0.845 	 Training loss: 10.50
+Gradient step: 199 	 Performance: 0.715 	 Training loss: 9.82
+Gradient step: 224 	 Performance: 0.91 	 Training loss: 7.42
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/rtantiseql/conformal' created successfully!
+Gradient step: 0 	 Performance: 0.07 	 Training loss: 3.51
+Gradient step: 24 	 Performance: 0.12 	 Training loss: 54.71
+Gradient step: 49 	 Performance: 0.05 	 Training loss: 31.79
+Gradient step: 74 	 Performance: 0.0 	 Training loss: 23.08
+Gradient step: 99 	 Performance: 0.325 	 Training loss: 20.45
+Gradient step: 124 	 Performance: 0.615 	 Training loss: 18.07
+Gradient step: 149 	 Performance: 0.965 	 Training loss: 15.79
+Folder '/om2/user/leokoz8/code/rnns-of-rnns/models/spectral/rtantiseql/None' created successfully!

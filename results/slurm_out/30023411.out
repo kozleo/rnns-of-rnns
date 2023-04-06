@@ -140,3 +140,4 @@ RuntimeError: Cannot enter into task <Task pending name='Task-12' coro=<HTTP1Ser
 [I 18:54:56.290 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
 [I 20:15:26.075 NotebookApp] Saving file at /notebooks/Loading Pretrained RNNs.ipynb
 [I 20:49:03.591 NotebookApp] Starting buffering for 0f1eee18-b999-48fd-946f-679eb3c2c2dd:3ca862f941fc4dac94c7393dbca86d21
+slurmstepd: error: *** JOB 30023411 ON node033 CANCELLED AT 2023-03-27T21:28:14 DUE TO TIME LIMIT ***

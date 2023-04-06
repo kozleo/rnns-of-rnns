@@ -3,11 +3,11 @@
 #SBATCH --mem=16GB
 #SBATCH --output=/om2/user/leokoz8/code/rnns-of-rnns/results/slurm_out/%j.out
 
-#SBATCH --qos=normal
-#SBATCH --partition=normal
+##SBATCH --qos=normal
+##SBATCH --partition=normal
 
-##SBATCH --qos=fietelab
-##SBATCH --partition=fietelab
+#SBATCH --qos=fietelab
+#SBATCH --partition=fietelab
 
 #SBATCH --gres=gpu:1
 #SBATCH --time=0-12:00:00

@@ -1,0 +1,94 @@
+[I 15:33:55.783 NotebookApp] [nb_conda_kernels] enabled, 12 kernels found
+[I 15:33:56.193 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 15:33:59.725 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-04-02 15:34:05.323 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-04-02 15:34:05.328 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-02 15:34:05.328 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-02 15:34:05.328 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-02 15:34:05.328 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-02 15:34:05.328 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-02 15:34:05.328 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-02 15:34:05.329 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-04-02 15:34:05.336 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-04-02 15:34:05.337 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-04-02 15:34:05.337 LabApp] JupyterLab application directory is /om/user/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 15:34:05.343 NotebookApp] Serving notebooks from local directory: /net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 15:34:05.343 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 15:34:05.343 NotebookApp] http://node053:9000/
+[I 15:34:05.343 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 15:45:46.364 NotebookApp] 302 GET / (172.16.24.254) 0.890000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 15:46:06.934 NotebookApp] Copying notebooks/Loading Pretrained RNNs.ipynb to /notebooks
+[W 15:46:07.066 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[W 15:46:07.068 NotebookApp] Notebook notebooks/Loading Pretrained RNNs-Copy1.ipynb is not trusted
+[W 15:46:30.678 NotebookApp] Notebook notebooks/Analyzing Trained GW.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2b9b64353af0>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b9b64353af0>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-11' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-41' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b9b64353850>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b9b64353850>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-10' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b9b64367340>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b9b64367340>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-4' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b9b64820430>(<Future finis...7727\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b9b64820430>(<Future finis...7727\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-13' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...67727\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b9b648205e0>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b9b648205e0>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-12' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+[I 15:46:31.332 NotebookApp] Kernel started: ae9d5715-e643-4c38-a2ba-8ad35bf3799d, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 15:48:31.049 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 15:50:32.040 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 15:56:31.054 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 15:58:32.048 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:00:31.079 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:02:31.055 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:04:31.059 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:06:31.066 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:08:31.051 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:10:31.053 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:12:31.065 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:14:31.072 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:16:31.077 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:18:31.101 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:20:31.066 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:22:32.047 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:24:31.059 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:26:31.075 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:36:31.119 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:38:31.066 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:40:31.066 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:42:31.063 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:44:31.071 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:44:48.807 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:44:54.283 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 16:46:32.065 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:12:31.194 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:14:31.087 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:16:31.085 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:18:31.073 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:20:31.123 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:22:31.085 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:24:31.092 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:26:31.135 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+[I 17:40:32.173 NotebookApp] Saving file at /notebooks/Analyzing Trained GW.ipynb
+slurmstepd: error: *** JOB 30099697 ON node053 CANCELLED AT 2023-04-03T03:34:00 DUE TO TIME LIMIT ***
