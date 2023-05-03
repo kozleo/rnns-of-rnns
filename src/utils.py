@@ -400,8 +400,13 @@ def get_stacked_weights_and_biases(tasks_and_constraints):
 
 
 def build_GWNET_from_pretrained(
-    tasks_and_constraints, env, device, pretrained_hidden_size=32, gw_hidden_size=16
-,interareal_constraint = 'conformal'):
+    tasks_and_constraints,
+    env,
+    device,
+    pretrained_hidden_size=32,
+    gw_hidden_size=16,
+    interareal_constraint="conformal",
+):
     p = len(tasks_and_constraints) + 1
     c_type = tasks_and_constraints[0][1]
 
@@ -438,24 +443,24 @@ def build_GWNET_from_pretrained(
 
     B_mask = create_mask_given_A(A_tril, ns)
 
-    if interareal_constraint == 'None':
+    if interareal_constraint == "None":
         # No stability constraint on interareal weights
-        B_mask = 0.5*(B_mask + B_mask.T)
+        B_mask = 0.5 * (B_mask + B_mask.T)
         M_hat = torch.eye(sum(ns), device=device)
 
-    if interareal_constraint == 'conformal':
-
+    if interareal_constraint == "conformal":
         # Stability constraint on interareal weights, conformal to the stability constraint on the subnetworks
 
-        if c_type == 'spectral':
+        if c_type == "spectral":
             M_hat = torch.eye(sum(ns), device=device)
 
-        if c_type == 'sym' or c_type == 'None':            
-            with torch.no_grad():        
-                Ms = compute_metric_from_weights(stacked_wb["rnn_h2h_weight"], ctype = c_type, device = device)
+        if c_type == "sym" or c_type == "None":
+            with torch.no_grad():
+                Ms = compute_metric_from_weights(
+                    stacked_wb["rnn_h2h_weight"], ctype=c_type, device=device
+                )
                 M_hat = torch.block_diag(*Ms)
 
-    
     B_mask = F.dropout(B_mask, 0.5)
 
     # Create global workspace weights and biases here
@@ -467,12 +472,18 @@ def build_GWNET_from_pretrained(
     stacked_wb["rnn_h2h_weight"].append(W_hat)
     stacked_wb["rnn_h2h_bias"].append(b_hat)
 
-
-
     B_mask = B_mask.to(device)
 
     net = models.GW_RNNNet(
-        stacked_wb, input_size, ns, output_size, M_hat, B_mask, device, interareal_constraint, dt=30
+        stacked_wb,
+        input_size,
+        ns,
+        output_size,
+        M_hat,
+        B_mask,
+        device,
+        interareal_constraint,
+        dt=30,
     )
     net.to(device)
 
@@ -493,7 +504,7 @@ def centorrino_theta(b, Lambda, device):
     return theta.to(device)
 
 
-def compute_metric_from_sym_weight_matrix(W,device):
+def compute_metric_from_sym_weight_matrix(W, device):
     # Uses the metric introduced in Centorrino, 2023
 
     L, U = torch.linalg.eigh(W)
@@ -505,22 +516,23 @@ def compute_metric_from_sym_weight_matrix(W,device):
 
     return U @ torch.diag(theta**2) @ U.T
 
-def compute_metric_from_weights(Ws,ctype,device):
 
+def compute_metric_from_weights(Ws, ctype, device):
     Ms = []
 
     for W in Ws:
-        if ctype == 'sym':
+        if ctype == "sym":
             M = compute_metric_from_sym_weight_matrix(W, device)
-        if ctype == 'None':
+        if ctype == "None":
             M = compute_linear_metric_from_weight_matrix(W, device)
-        
+
         Ms.append(M)
 
     return Ms
 
 
 from scipy import linalg
+
 
 def compute_linear_metric_from_weight_matrix(W, device):
     # Solves the Lyapunov equation to obtain metric

@@ -1,0 +1,115 @@
+[I 20:03:49.642 NotebookApp] [nb_conda_kernels] enabled, 13 kernels found
+[I 20:03:49.776 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 20:03:50.730 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-04-15 20:03:51.685 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-04-15 20:03:51.689 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-15 20:03:51.690 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-15 20:03:51.690 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-15 20:03:51.690 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-15 20:03:51.690 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-15 20:03:51.690 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-15 20:03:51.691 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-04-15 20:03:51.699 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-04-15 20:03:51.701 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-04-15 20:03:51.701 LabApp] JupyterLab application directory is /om/weka/fiete/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 20:03:51.707 NotebookApp] Serving notebooks from local directory: /rdma/vast-rdma/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 20:03:51.707 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 20:03:51.707 NotebookApp] http://node077:9000/
+[I 20:03:51.707 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 20:05:02.093 NotebookApp] 302 GET / (172.16.24.254) 1.600000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 20:05:19.538 NotebookApp] Creating new notebook in /notebooks
+Exception in callback <TaskStepMethWrapper object at 0x2b04f79342e0>()
+handle: <Handle <TaskStepMethWrapper object at 0x2b04f79342e0>()>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-40' coro=<RequestHandler._execute() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:1665> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:2361]> while another task <Task pending name='Task-39' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskStepMethWrapper object at 0x2b04f73d4a00>()
+handle: <Handle <TaskStepMethWrapper object at 0x2b04f73d4a00>()>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-4' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:842> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-39' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2b04f73d4b20>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2b04f73d4b20>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-12' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-1' coro=<MultiKernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/multikernelmanager.py:207>> is being executed.
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/traitlets/traitlets.py:1266: RuntimeWarning: coroutine 'RequestHandler._execute' was never awaited
+  c(event)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Task was destroyed but it is pending!
+task: <Task pending name='Task-40' coro=<RequestHandler._execute() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:1665> cb=[_HandlerDelegate.execute.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/web.py:2361]>
+[I 20:05:22.045 NotebookApp] Kernel started: c8c355a0-8223-4bec-9dad-79987b461e3a, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 20:07:22.148 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:11:22.061 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:15:22.067 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:17:22.074 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:19:22.053 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:21:09.487 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:21:22.063 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:22:55.578 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:23:22.063 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:25:02.654 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:25:22.075 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:27:22.056 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:27:28.783 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[W 20:28:31.075 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 20:29:22.091 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:29:44.807 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[W 20:31:09.342 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 20:31:10.137 NotebookApp] Kernel started: b5028d53-881a-452d-91a8-a503befe4639, name: conda-env-leokoz8-rnns-of-rnns-env-py
+[I 20:31:13.513 NotebookApp] Starting buffering for b5028d53-881a-452d-91a8-a503befe4639:3867fb2c936d42619b45c31da86d3ef8
+[W 20:31:17.886 NotebookApp] Notebook notebooks/Loading Pretrained RNNs.ipynb is not trusted
+[I 20:31:22.099 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:31:32.417 NotebookApp] Starting buffering for b5028d53-881a-452d-91a8-a503befe4639:34d8921165c14e4d969db2512b69f7cb
+[I 20:33:22.112 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:33:42.190 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:35:22.083 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:37:22.073 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:39:22.079 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:39:33.267 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:41:22.089 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:43:22.152 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:45:05.445 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:45:22.071 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:47:22.089 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:48:28.082 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:49:22.092 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:51:22.113 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:53:22.085 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:54:28.278 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 20:55:22.116 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:57:22.103 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 20:59:22.109 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:00:12.607 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 21:01:22.071 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:03:22.160 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:05:22.211 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:07:22.101 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:09:22.089 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:11:22.097 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:13:22.105 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:15:22.095 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:17:22.138 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:19:22.104 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:21:22.105 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:23:22.115 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:25:22.124 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:26:39.853 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 21:27:22.107 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:28:36.536 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 21:29:22.115 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:31:22.115 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:33:22.101 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:33:48.459 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:35:16.929 NotebookApp] Kernel interrupted: c8c355a0-8223-4bec-9dad-79987b461e3a
+[I 21:35:22.076 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:35:24.235 NotebookApp] Saving file at /notebooks/Fashion MNIST test.ipynb
+[I 21:35:25.354 NotebookApp] Starting buffering for c8c355a0-8223-4bec-9dad-79987b461e3a:03f80300c0ee4244b8cc11c5412b85c3
+slurmstepd: error: *** JOB 30233941 ON node077 CANCELLED AT 2023-04-16T08:03:52 DUE TO TIME LIMIT ***

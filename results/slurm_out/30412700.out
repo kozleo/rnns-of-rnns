@@ -1,0 +1,241 @@
+[I 13:48:22.621 NotebookApp] [nb_conda_kernels] enabled, 13 kernels found
+[I 13:48:22.730 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 13:48:23.563 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-04-27 13:48:24.569 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-04-27 13:48:24.574 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-27 13:48:24.574 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-27 13:48:24.574 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-27 13:48:24.574 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-27 13:48:24.574 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-27 13:48:24.574 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-04-27 13:48:24.575 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-04-27 13:48:24.584 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-04-27 13:48:24.586 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-04-27 13:48:24.586 LabApp] JupyterLab application directory is /om/weka/fiete/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 13:48:24.591 NotebookApp] Serving notebooks from local directory: /net/vast-storage.ib.cluster/scratch/vast/fiete/leokoz8/code/rnns-of-rnns
+[I 13:48:24.592 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 13:48:24.592 NotebookApp] http://node070:9000/
+[I 13:48:24.592 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 13:49:44.900 NotebookApp] 302 GET / (172.16.24.254) 0.900000ms
+[I 13:49:48.139 NotebookApp] 302 GET / (172.16.24.254) 0.710000ms
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 13:49:59.830 NotebookApp] Creating new notebook in /notebooks
+Exception in callback <TaskWakeupMethWrapper object at 0x2aaacff49850>(<Future finished result=None>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2aaacff49850>(<Future finished result=None>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-19' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=None> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-81' coro=<MappingKernelManager.start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/notebook/services/kernels/kernelmanager.py:176> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2aaacff49a90>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2aaacff49a90>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-12' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /kernel...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-2' coro=<KernelManager._async_start_kernel() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyter_client/manager.py:71>> is being executed.
+[I 13:50:03.401 NotebookApp] Kernel started: 2eb7e145-1c43-4f36-96e0-85ab7890f80b, name: conda-env-leokoz8-rnns-of-rnns-env-py
+/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/json/encoder.py:257: UserWarning: date_default is deprecated since jupyter_client 7.0.0. Use jupyter_client.jsonutil.json_default.
+  return _iterencode(o, 0)
+[I 13:50:27.144 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[I 13:50:30.510 NotebookApp] Starting buffering for 2eb7e145-1c43-4f36-96e0-85ab7890f80b:e6dc4f82c9ff41dd8d7f47cd1d670479
+[W 13:50:33.060 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+Exception in callback <TaskWakeupMethWrapper object at 0x2aaad06d4c10>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2aaad06d4c10>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-18' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /api/co...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-175' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2aaad06d4fa0>(<Future finis... GMT\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2aaad06d4fa0>(<Future finis... GMT\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-17' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /custom...4 GMT\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-175' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2aaad06d4820>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2aaad06d4820>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-13' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /nbexte...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-175' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+Exception in callback <TaskWakeupMethWrapper object at 0x2aaad06d4d90>(<Future finis...late\r\n\r\n'>)
+handle: <Handle <TaskWakeupMethWrapper object at 0x2aaad06d4d90>(<Future finis...late\r\n\r\n'>)>
+Traceback (most recent call last):
+  File "/om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: Cannot enter into task <Task pending name='Task-9' coro=<HTTP1ServerConnection._server_request_loop() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/http1connection.py:825> wait_for=<Future finished result=b'GET /static...flate\r\n\r\n'> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:687]> while another task <Task pending name='Task-175' coro=<PeriodicCallback._run() running at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:921> cb=[IOLoop.add_future.<locals>.<lambda>() at /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/tornado/ioloop.py:694]> is being executed.
+[I 13:52:35.181 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 13:52:35.181 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 13:54:34.417 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 13:54:34.417 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 13:56:33.993 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 13:56:33.994 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 13:58:34.261 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 13:58:34.262 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:00:34.214 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:00:34.215 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:02:34.061 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:02:34.062 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:04:34.075 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:04:34.076 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:06:34.026 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:06:34.027 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:08:34.186 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:08:34.186 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:10:33.964 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:10:33.965 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:12:34.082 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:12:34.083 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:14:34.006 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:14:34.007 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:16:33.918 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:16:33.919 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:18:34.031 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:18:34.032 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:20:33.952 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:20:33.953 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:22:34.009 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:22:34.010 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:24:33.967 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:24:33.967 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:26:34.154 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:26:34.155 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:28:33.911 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:28:33.912 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:30:35.045 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:30:35.045 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:34:33.959 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:34:33.959 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:36:33.957 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:36:33.958 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 14:38:35.213 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 14:38:35.214 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 15:48:34.325 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 15:48:34.325 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 15:50:34.012 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 15:50:34.013 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 15:52:33.941 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 15:52:33.942 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 15:54:34.987 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 15:54:34.988 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 15:56:33.924 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 15:56:33.925 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 15:58:33.957 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 15:58:33.959 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:00:33.987 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:00:33.988 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:04:33.966 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:04:33.967 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:06:33.967 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:06:33.968 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:08:33.935 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:08:33.936 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:10:33.981 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:10:33.982 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:12:33.977 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:12:33.978 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:14:34.013 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:14:34.014 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:24:33.993 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:24:33.994 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:26:34.015 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:26:34.016 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:28:33.954 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:28:33.955 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:30:33.943 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:30:33.944 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:32:33.913 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:32:33.915 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:34:33.908 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:34:33.909 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:36:33.899 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:36:33.900 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:38:33.944 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:38:33.945 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:40:34.533 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:40:34.534 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:42:33.928 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:42:33.931 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:44:34.065 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:44:34.065 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:48:33.936 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:48:33.937 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:50:33.941 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:50:33.942 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:52:34.088 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:52:34.089 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:54:33.990 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:54:33.991 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 16:58:47.065 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 16:58:47.066 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:00:34.024 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:00:34.025 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:02:34.047 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:02:34.048 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:04:34.300 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:04:34.301 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:10:34.186 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:10:34.187 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:12:34.174 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:12:34.174 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:14:34.173 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:14:34.173 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 17:16:33.944 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 17:16:33.944 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:42:34.084 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:42:34.085 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:44:34.019 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:44:34.020 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:44:50.676 NotebookApp] Kernel interrupted: 2eb7e145-1c43-4f36-96e0-85ab7890f80b
+[I 19:45:51.244 NotebookApp] Kernel interrupted: 2eb7e145-1c43-4f36-96e0-85ab7890f80b
+[I 19:46:34.003 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:46:34.004 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:48:34.006 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:48:34.007 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:50:33.870 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:50:33.870 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:52:34.004 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:52:34.005 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:54:34.109 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:54:34.110 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:56:34.010 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:56:34.011 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 19:58:33.994 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 19:58:33.995 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:00:33.967 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:00:33.967 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:02:34.012 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:02:34.013 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:04:34.001 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:04:34.002 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:06:33.972 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:06:33.973 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:08:34.045 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:08:34.046 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:10:34.022 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:10:34.023 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:12:34.030 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:12:34.032 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:14:33.965 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:14:33.967 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:16:33.978 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:16:33.979 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:18:33.962 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:18:33.963 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:20:34.076 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:20:34.077 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:26:34.008 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:26:34.009 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:28:33.996 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:28:33.997 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:30:34.153 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:30:34.154 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:32:33.957 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:32:33.958 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:34:33.965 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:34:33.966 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:36:34.322 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:36:34.323 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:38:34.113 NotebookApp] Saving file at /notebooks/Adaptive Control.ipynb
+[W 20:38:34.114 NotebookApp] Notebook notebooks/Adaptive Control.ipynb is not trusted
+[I 20:44:29.716 NotebookApp] Starting buffering for 2eb7e145-1c43-4f36-96e0-85ab7890f80b:fc24ac3fcc294d0f9ad2955e154e7c05
+slurmstepd: error: *** JOB 30412700 ON node070 CANCELLED AT 2023-04-28T01:48:37 DUE TO TIME LIMIT ***

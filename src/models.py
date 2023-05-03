@@ -149,6 +149,16 @@ class CTRNN(nn.Module):
                 ),
             )
 
+        if constraint == "matsuoka":
+            # constrain weights to be symmetric and have eigenvalues less than unity
+            parametrize.register_parametrization(
+                self.h2h,
+                "weight",
+                parametrizations.MatsuokaStable(
+                    n=self.hidden_size, epsilon=1e-4, device=self.device
+                ),
+            )
+
     def init_hidden(self, input_shape):
         batch_size = input_shape[1]
         return torch.zeros(batch_size, self.hidden_size)
@@ -218,8 +228,6 @@ class RNNNet(nn.Module):
         return out, rnn_output
 
 
-
-
 class GW_CTRNN(nn.Module):
     """Continuous-time RNN. Forked from Robert Yang's implementation.
 
@@ -240,7 +248,16 @@ class GW_CTRNN(nn.Module):
     """
 
     def __init__(
-        self, stacked_wb, input_size, ns, device, M_hat, B_mask, interareal_constraint, dt = None, **kwargs
+        self,
+        stacked_wb,
+        input_size,
+        ns,
+        device,
+        M_hat,
+        B_mask,
+        interareal_constraint,
+        dt=None,
+        **kwargs
     ):
         super().__init__()
         self.input_size = input_size
@@ -257,8 +274,20 @@ class GW_CTRNN(nn.Module):
         # load in pretrained weights and biases
         # self.input2h_weight_bar = torch.block_diag(*stacked_wb['input2h_weight_bar'])
         # self.rnn_input2h_bias = stacked_wb['rnn_input2h_bias']
-        self.rnn_h2h_weight = torch.block_diag(*stacked_wb["rnn_h2h_weight"])
-        self.rnn_h2h_bias = torch.cat(stacked_wb["rnn_h2h_bias"], dim=0)
+        if stacked_wb is not None:
+            self.rnn_h2h_weight = torch.block_diag(*stacked_wb["rnn_h2h_weight"])
+            self.rnn_h2h_bias = torch.cat(stacked_wb["rnn_h2h_bias"], dim=0)
+        else:
+            W_hat, Ws = utils.create_random_block_stable_symmetric_weights(
+                [self.hidden_size]
+            )
+            W_hat = W_hat.to(device)
+            tmp = nn.Linear(
+                self.hidden_size, self.hidden_size, bias=True, device=device
+            )
+            b_hat = tmp.bias
+            self.rnn_h2h_weight = W_hat
+            self.rnn_h2h_bias = b_hat
 
         # self.fc_weight_bar = torch.block_diag(*stacked_wb['fc_weight_bar'])
         # self.fc_bias_bar = stacked_wb['fc_bias_bar']
@@ -270,48 +299,47 @@ class GW_CTRNN(nn.Module):
         self.h2h.bias = nn.Parameter(self.rnn_h2h_bias)
         self.h2h.weight.requires_grad = False
         self.h2h.bias.requires_grad = True
-        
 
         # parameterize interareal connectivity matrix
         self.L_hat = nn.Linear(
-            in_features=self.hidden_size, out_features=self.hidden_size, bias=True, device = self.device
+            in_features=self.hidden_size,
+            out_features=self.hidden_size,
+            bias=True,
+            device=self.device,
         )
 
         self.M_hat = M_hat
         self.B_mask = B_mask
 
-        #spectral_norm(self.L_hat, name = "weight")
+        # spectral_norm(self.L_hat, name = "weight")
 
-
-        if interareal_constraint == 'conformal':    
+        if interareal_constraint == "conformal":
             parametrize.register_parametrization(
                 self.L_hat,
                 "weight",
                 parametrizations.InterarealMaskedAndStable(
-                    n = self.hidden_size,
-                    M_hat = self.M_hat,
-                    B_mask = self.B_mask,
-                    device = self.device,
+                    n=self.hidden_size,
+                    M_hat=self.M_hat,
+                    B_mask=self.B_mask,
+                    device=self.device,
                 ),
             )
 
-        if interareal_constraint == 'None':        
+        if interareal_constraint == "None":
             parametrize.register_parametrization(
                 self.L_hat,
                 "weight",
                 parametrizations.InterarealMasked(
-                    n = self.hidden_size,
-                    M_hat = self.M_hat,
-                    B_mask = self.B_mask,
-                    device = self.device,
+                    n=self.hidden_size,
+                    M_hat=self.M_hat,
+                    B_mask=self.B_mask,
+                    device=self.device,
                 ),
             )
 
-
-
     def init_hidden(self, input_shape):
         batch_size = input_shape[1]
-        return torch.zeros(batch_size, self.hidden_size,device = self.device)
+        return torch.zeros(batch_size, self.hidden_size, device=self.device)
 
     def recurrence(self, input, hidden):
         """Run network for one time step.
@@ -333,8 +361,8 @@ class GW_CTRNN(nn.Module):
 
         # If hidden activity is not provided, initialize it
         if hidden is None:
-           # hidden = self.init_hidden(input.shape).to(input.device)
-           hidden = self.init_hidden(input.shape)
+            # hidden = self.init_hidden(input.shape).to(input.device)
+            hidden = self.init_hidden(input.shape)
 
         # Loop through time
         output = []
@@ -399,11 +427,11 @@ class GW_RNNNet(nn.Module):
             M_hat=self.M_hat,
             B_mask=self.B_mask,
             dt=self.dt,
-            interareal_constraint = self.interareal_constraint
+            interareal_constraint=self.interareal_constraint,
         )
 
         # Add an output layer
-        self.fc = nn.Linear(self.hidden_size, self.output_size,device = self.device)
+        self.fc = nn.Linear(self.hidden_size, self.output_size, device=self.device)
 
     def forward(self, x):
         rnn_output, _ = self.rnn(x)

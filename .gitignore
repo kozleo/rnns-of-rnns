@@ -1,0 +1,5 @@
+/om2/user/leokoz8/code/rnns-of-rnns/data/
+/om2/user/leokoz8/code/rnns-of-rnns/notebooks/data/FashionMNIST/raw/
+*.gz
+*idx1-ubyte
+*idx3-ubyte
