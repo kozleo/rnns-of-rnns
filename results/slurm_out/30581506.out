@@ -1,0 +1,18 @@
+[I 16:24:43.023 NotebookApp] [nb_conda_kernels] enabled, 13 kernels found
+[I 16:24:43.177 NotebookApp] Authentication of /metrics is OFF, since other authentication is disabled.
+[W 16:24:44.167 NotebookApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[W 2023-05-08 16:24:45.204 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-05-08 16:24:45.210 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-05-08 16:24:45.210 LabApp] 'port' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-05-08 16:24:45.210 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-05-08 16:24:45.210 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-05-08 16:24:45.211 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-05-08 16:24:45.211 LabApp] 'password' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-05-08 16:24:45.212 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2023-05-08 16:24:45.221 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2023-05-08 16:24:45.223 LabApp] JupyterLab extension loaded from /om/user/leokoz8/envs/rnns-of-rnns-env/lib/python3.8/site-packages/jupyterlab
+[I 2023-05-08 16:24:45.223 LabApp] JupyterLab application directory is /om/weka/fiete/leokoz8/envs/rnns-of-rnns-env/share/jupyter/lab
+[I 16:24:45.229 NotebookApp] Serving notebooks from local directory: /home/leokoz8/.ssh
+[I 16:24:45.230 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 16:24:45.230 NotebookApp] http://node081:9000/
+[I 16:24:45.230 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
