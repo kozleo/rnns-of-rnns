@@ -216,7 +216,7 @@ def create_random_A(ns, frac_zeros):
     return A_tril
 
 
-def create_mask_given_A(A, ns):
+def create_mask_given_A(A, ns, use_upper = False):
     """
     Creates 'hidden' mask for training, given an arbitrary adjacency matrix.
 
@@ -227,20 +227,39 @@ def create_mask_given_A(A, ns):
         - A: mask
     """
 
-    N_nets = len(ns)
-    mask = []
+    if use_upper == False:
 
-    for i in range(N_nets):
-        mask_row_i = torch.cat(
-            [
-                torch.ones((ns[i], ns[j]))
-                if A[i, j] == 1 and i >= j
-                else torch.zeros((ns[i], ns[j]))
-                for j in range(N_nets)
-            ],
-            1,
-        )
-        mask.append(mask_row_i)
+        N_nets = len(ns)
+        mask = []
+
+        for i in range(N_nets):
+            mask_row_i = torch.cat(
+                [
+                    torch.ones((ns[i], ns[j]))
+                    if A[i, j] == 1 and i >= j
+                    else torch.zeros((ns[i], ns[j]))
+                    for j in range(N_nets)
+                ],
+                1,
+            )
+            mask.append(mask_row_i)
+
+    else:
+        N_nets = len(ns)
+        mask = []
+
+        for i in range(N_nets):
+            mask_row_i = torch.cat(
+                [
+                    torch.ones((ns[i], ns[j]))
+                    if A[i, j] == 1
+                    else torch.zeros((ns[i], ns[j]))
+                    for j in range(N_nets)
+                ],
+                1,
+            )
+            mask.append(mask_row_i)        
+
 
     final = torch.cat(mask, 0)
     # final.to(device)
@@ -546,3 +565,59 @@ def compute_linear_metric_from_weight_matrix(W, device):
     M = linalg.solve_continuous_lyapunov(J.T, -I)
 
     return torch.from_numpy(M).to(device).float()
+
+
+import scipy
+# Define the exponentiated quadratic 
+def exponentiated_quadratic(xa, xb, sigma):
+    """Exponentiated quadratic  with σ=1"""
+    # L2 distance (Squared Euclidian)
+    sq_norm = -0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean')
+    return np.exp(sq_norm/(2*sigma**2))
+
+
+def generate_GP(T,time_step,n,sigma):
+
+    assert time_step >= 0.1, print('Time step too small, computer will hang.')
+
+
+    # Sample from the Gaussian process distribution
+    dt = time_step
+    T = 150
+    nb_of_samples = int(T/dt)  # Number of points in each function
+    number_of_functions = n  # Number of functions to sample
+
+
+
+    # Independent variable samples
+    X = np.expand_dims(np.linspace(0, T, nb_of_samples), 1)
+    Σ = exponentiated_quadratic(X, X, sigma = sigma)  # Kernel of data points
+
+    # Draw samples from the prior at our data points.
+    # Assume a mean of 0 for simplicity
+    ys = np.random.multivariate_normal(
+        mean=np.zeros(nb_of_samples), cov=Σ, 
+        size=number_of_functions)
+
+    return ys
+
+from scipy.interpolate import interp1d
+def upscale_timeseries(data, new_length):
+    # Create an array representing the original indices
+    original_indices = np.arange(len(data))
+    
+    # Create an array representing the new indices
+    new_indices = np.linspace(0, len(data) - 1, new_length)
+    
+    # Create a new array to hold the upscaled data
+    upscaled_data = np.zeros((new_length,) + data.shape[1:])
+    
+    # Iterate over each dimension of the data
+    for d in range(data.shape[1]):
+        # Create an interpolation function for this dimension
+        interpolator = interp1d(original_indices, data[:, d])
+        
+        # Use the interpolator to calculate the upscaled data
+        upscaled_data[:, d] = interpolator(new_indices)
+        
+    return upscaled_data

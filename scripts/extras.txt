@@ -270,3 +270,55 @@ class VSRNN(jit.ScriptModule):
                     print("RNN is provably stable with symmetric condition.")
                 return e
 '''
+
+
+
+eeg_train = np.load('/home/leo/rnns-of-rnns/data/EEG_train.npy')
+
+def run_adaptation_EEG(net = None, hidden_size = 16, p = 4, dt = 0.005, T = 150,trials = 1 ,eta = 1):
+
+    n = int(hidden_size*p)
+    #ts = np.arange(0, T, dt)
+    ts = np.linspace(0,1,len(eeg_train))
+
+
+    es = np.zeros((trials,len(ts)))
+
+
+
+    for trial in range(trials):
+        x = np.random.normal(0, 1, n)
+
+        #_, sine_waves = generate_sine_waves(n, T, time_step= dt, frequency = 5)
+        
+        #_, sine_waves_desired = generate_sine_waves(n, T, time_step = dt, frequency = 1)
+        
+        #P = np.random.normal(0,1/np.sqrt(n),size = (n,1))
+        #sine_waves_desired = P @ sine_wave_desired
+        
+        states = []
+
+        for k,t in enumerate(ts):
+            
+            states.append(x)
+
+            e = x - eeg_train[k,:]
+            es[trial,k] = (1/np.sqrt(n))*np.linalg.norm(e)            
+
+            
+            net.A = net.A + dt*(-eta*np.outer(e,np.tanh(x))*net.B)
+            f = net(x, -1*e)
+            
+            
+
+            x = x +  dt*f
+
+        states = np.stack(states)
+        #outputs = states @ P
+        
+        #output_errors = outputs - sine_wave_desired
+        #es_output = np.linalg.norm(output_errors,axis = 1)
+        
+    
+    return es, states#, outputs, es_output
+    

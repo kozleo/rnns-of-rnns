@@ -3,6 +3,9 @@ README.md
 setup.py
 src/__init__.py
 src/models.py
+src/parametrizations.py
+src/running.py
+src/tasks.py
 src/utils.py
 src.egg-info/PKG-INFO
 src.egg-info/SOURCES.txt
