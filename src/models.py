@@ -437,3 +437,80 @@ class GW_RNNNet(nn.Module):
         rnn_output, _ = self.rnn(x)
         out = self.fc(rnn_output)
         return out, rnn_output
+
+
+class GW_Net:
+    def __init__(self, hidden_size=32, p=5, g=1.5, s_max=1, arch="all"):
+        self.hidden_size = hidden_size
+        self.p = p
+        self.g = g
+        self.s_max = s_max
+        self.arch = arch
+        self.build_GW_Net()
+
+    def build_GW_Net(self):
+        # hidden_size = number of units per subnetwork
+        # p = number of subnetworks
+        # g = initial recurrent magnitude for h2h matrices
+        # s_max = largest singular value of h2h matrices
+
+        ns = [self.hidden_size for _ in range(self.p)]
+
+        if self.arch == "GW":
+            A_tril = torch.zeros((len(ns), len(ns)))
+            A_tril[-1, :] = 1
+            B_mask = utils.create_mask_given_A(A_tril, ns)
+            B = B_mask.detach().cpu().numpy()
+            B = B + B.T
+            B[B == 2] = 0
+
+        if self.arch == "hier":
+            A_tril = utils.generate_random_hierarchcal_adjacency(self.p, 0)
+            B_mask = utils.create_mask_given_A(A_tril, ns)
+            B = B_mask.detach().cpu().numpy()
+
+        if self.arch == "all":
+            A_tril = np.ones((self.p, self.p)) - np.eye(self.p)
+            B_mask = utils.create_mask_given_A(A_tril, ns)
+            B = B_mask.detach().cpu().numpy()
+            B = B + B.T
+
+        if self.arch == "random":
+            A_tril = np.random.choice(
+                [0, 1], p=[0.2, 0.8], size=(self.p, self.p)
+            ) - np.eye(self.p)
+            B_mask = utils.create_mask_given_A(A_tril, ns, use_upper=True)
+            B = B_mask.detach().cpu().numpy()
+
+        # adaptable weights
+        A = np.eye(
+            int(self.hidden_size * self.p)
+        )  # np.random.normal(0,1/np.sqrt(hidden_size),(sum(ns),sum(ns)))
+        A = A * B
+
+        # intra-areal weights, singular values less than or equal to unity
+        blocks = utils.create_mask_given_A(np.eye(len(ns)), ns)
+        blocks = blocks.detach().cpu().numpy()
+        W = np.random.normal(0, self.g / np.sqrt(self.hidden_size), (sum(ns), sum(ns)))
+        W *= blocks
+
+        # sparsify h2h weights
+        random_W_mask = np.random.choice([0, 1], p=[0.5, 0.5], size=(sum(ns), sum(ns)))
+        W *= random_W_mask
+
+        D = np.eye(sum(ns))  # np.random.normal(0,1,sum(ns),sum(ns))
+
+        # project h2h to unit norm
+        u, s, vt = np.linalg.svd(W)
+        s = np.minimum(self.s_max, s)
+        W = u @ np.diag(s) @ vt
+
+        self.W, self.F, self.A, self.B, self.D = W, F, A, B, D
+
+    def forward(self, x, u):
+        # Define the forward computation here
+
+        return -x + self.W @ np.tanh(x) + self.A @ np.maximum(0, self.D @ x) + u
+
+    def __call__(self, x, u):
+        return self.forward(x, u)

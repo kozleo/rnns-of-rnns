@@ -621,3 +621,11 @@ def upscale_timeseries(data, new_length):
         upscaled_data[:, d] = interpolator(new_indices)
         
     return upscaled_data
+
+
+def generate_random_hierarchcal_adjacency(p, s):
+    # p number of nodes
+    # s sparsity
+
+    A = np.random.choice([0,1],p = [s, 1-s],size = (p,p))
+    return np.tril(A) - np.diag(np.diag(A))
